@@ -12,6 +12,7 @@ target 'OniDream' do
   pod 'SwiftyJSON'
   pod 'KeychainSwift', '~> 8.0'
   pod 'RealmSwift'
+  pod 'SwiftCharts', '~> 0.6'
 
   target 'OniDreamTests' do
     inherit! :search_paths

@@ -1,3 +1,32 @@
-PODFILE CHECKSUM: b919a9db9c21a77bba247b90d6b22115bcf78c35
+PODS:
+  - Alamofire (4.4.0)
+  - DateToolsSwift (2.0.3)
+  - KeychainSwift (8.0.2)
+  - PinLayout (0.9.0)
+  - Realm (2.7.0):
+    - Realm/Headers (= 2.7.0)
+  - Realm/Headers (2.7.0)
+  - RealmSwift (2.7.0):
+    - Realm (= 2.7.0)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - DateToolsSwift
+  - KeychainSwift (~> 8.0)
+  - PinLayout
+  - RealmSwift
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
+  KeychainSwift: 213db04dfe7244988e61f77c72a2afb2f775954a
+  PinLayout: 4c3841afafd951cd303d6f2b7913f6946ef129a6
+  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 21b6d9c01a595f28b01408751d9b43c6e49d9199
 
 COCOAPODS: 1.3.1
