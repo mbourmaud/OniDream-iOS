@@ -16,7 +16,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
+		self.setNavigationBarAppearance(app: application)
+		self.setTabBarAppearance()
 		return true
+	}
+	
+	/* Navigation TabBar style */
+	func setTabBarAppearance() {
+		UITabBar.appearance().tintColor = Color.white
+		UITabBar.appearance().unselectedItemTintColor = Color.white
+		UITabBar.appearance().backgroundColor = Color.blue
+		UITabBar.appearance().shadowImage = UIImage()
+		UITabBar.appearance().backgroundImage = UIImage()
+		UITabBar.appearance().barTintColor = Color.blue
+	}
+	
+	/* Navigation Bar style */
+	func setNavigationBarAppearance(app: UIApplication) {
+		app.statusBarStyle = .lightContent
+		UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+		UINavigationBar.appearance().shadowImage = UIImage()
+		UINavigationBar.appearance().backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+		UINavigationBar.appearance().isTranslucent = false
+		UINavigationBar.appearance().barTintColor = Color.purple
+		UINavigationBar.appearance().tintColor = Color.white
+		UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: Color.white,
+		                                                    NSFontAttributeName: Style.navigationFont]
 	}
 
 	func applicationWillResignActive(_ application: UIApplication) {

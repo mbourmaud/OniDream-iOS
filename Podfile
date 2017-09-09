@@ -13,6 +13,8 @@ target 'OniDream' do
   pod 'KeychainSwift', '~> 8.0'
   pod 'RealmSwift'
   pod 'SwiftCharts', '~> 0.6'
+  pod 'Hue', '~> 2.0'
+  pod 'NVActivityIndicatorView', '~> 3.7'
 
   target 'OniDreamTests' do
     inherit! :search_paths

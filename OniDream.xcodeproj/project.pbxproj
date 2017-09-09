@@ -17,7 +17,15 @@
 		609E47491F644D37000EF712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609E47471F644D37000EF712 /* LaunchScreen.storyboard */; };
 		609E47541F644D37000EF712 /* OniDreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E47531F644D37000EF712 /* OniDreamTests.swift */; };
 		609E475F1F644D37000EF712 /* OniDreamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E475E1F644D37000EF712 /* OniDreamUITests.swift */; };
+		60B1EA4A1F64692500F02240 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1EA491F64692500F02240 /* UIViewExtension.swift */; };
+		60B1EA4C1F64698C00F02240 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1EA4B1F64698C00F02240 /* UILabelExtension.swift */; };
 		60D9EB0B1F6456080068969F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB0A1F6456080068969F /* Constants.swift */; };
+		60D9EB0D1F6461C10068969F /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB0C1F6461C10068969F /* Dream.swift */; };
+		60D9EB151F6464690068969F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB141F6464690068969F /* Card.swift */; };
+		60D9EB191F64649D0068969F /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB181F64649D0068969F /* Modal.swift */; };
+		60D9EB1B1F6464B10068969F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB1A1F6464B10068969F /* Button.swift */; };
+		60D9EB1D1F6464D50068969F /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB1C1F6464D50068969F /* Input.swift */; };
+		60D9EB1F1F6465040068969F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB1E1F6465040068969F /* Cell.swift */; };
 		A33AF98F86B9C0F1640F6F63 /* Pods_OniDreamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888A10BDB7AE8DF0D06DDF61 /* Pods_OniDreamUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +64,15 @@
 		609E475A1F644D37000EF712 /* OniDreamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OniDreamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		609E475E1F644D37000EF712 /* OniDreamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OniDreamUITests.swift; sourceTree = "<group>"; };
 		609E47601F644D37000EF712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60B1EA491F64692500F02240 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		60B1EA4B1F64698C00F02240 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		60D9EB0A1F6456080068969F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		60D9EB0C1F6461C10068969F /* Dream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dream.swift; sourceTree = "<group>"; };
+		60D9EB141F6464690068969F /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		60D9EB181F64649D0068969F /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		60D9EB1A1F6464B10068969F /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		60D9EB1C1F6464D50068969F /* Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		60D9EB1E1F6465040068969F /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		888A10BDB7AE8DF0D06DDF61 /* Pods_OniDreamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OniDreamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5352A4A4FA803E6A7FFEBC /* Pods-OniDream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDream.release.xcconfig"; path = "Pods/Target Support Files/Pods-OniDream/Pods-OniDream.release.xcconfig"; sourceTree = "<group>"; };
 		AE4BF0196340B2F59A32AA3D /* Pods-OniDreamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamTests/Pods-OniDreamTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +182,7 @@
 		60D9EB051F64550F0068969F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				60D9EB0C1F6461C10068969F /* Dream.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,6 +190,11 @@
 		60D9EB061F6455150068969F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				60D9EB141F6464690068969F /* Card.swift */,
+				60D9EB181F64649D0068969F /* Modal.swift */,
+				60D9EB1A1F6464B10068969F /* Button.swift */,
+				60D9EB1C1F6464D50068969F /* Input.swift */,
+				60D9EB1E1F6465040068969F /* Cell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,6 +216,8 @@
 		60D9EB091F64552D0068969F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				60B1EA491F64692500F02240 /* UIViewExtension.swift */,
+				60B1EA4B1F64698C00F02240 /* UILabelExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -455,20 +479,24 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-OniDream/Pods-OniDream-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCharts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,9 +548,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				609E47411F644D37000EF712 /* SecondViewController.swift in Sources */,
+				60D9EB191F64649D0068969F /* Modal.swift in Sources */,
+				60B1EA4A1F64692500F02240 /* UIViewExtension.swift in Sources */,
+				60D9EB151F6464690068969F /* Card.swift in Sources */,
+				60B1EA4C1F64698C00F02240 /* UILabelExtension.swift in Sources */,
 				609E473D1F644D37000EF712 /* AppDelegate.swift in Sources */,
 				609E473F1F644D37000EF712 /* FirstViewController.swift in Sources */,
+				60D9EB1D1F6464D50068969F /* Input.swift in Sources */,
+				60D9EB0D1F6461C10068969F /* Dream.swift in Sources */,
+				60D9EB1F1F6465040068969F /* Cell.swift in Sources */,
 				60D9EB0B1F6456080068969F /* Constants.swift in Sources */,
+				60D9EB1B1F6464B10068969F /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
