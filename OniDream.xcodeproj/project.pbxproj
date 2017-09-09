@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D54DFC1F44EC03713B9A36A /* Pods_OniDream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2586AED138720FD4CFAFCB5E /* Pods_OniDream.framework */; };
+		54A6CBE2584E07F69D2AEC52 /* Pods_OniDreamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E256012D17017C5886C6FD2 /* Pods_OniDreamTests.framework */; };
 		609E473D1F644D37000EF712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E473C1F644D37000EF712 /* AppDelegate.swift */; };
 		609E473F1F644D37000EF712 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E473E1F644D37000EF712 /* FirstViewController.swift */; };
 		609E47411F644D37000EF712 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E47401F644D37000EF712 /* SecondViewController.swift */; };
@@ -15,6 +17,8 @@
 		609E47491F644D37000EF712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609E47471F644D37000EF712 /* LaunchScreen.storyboard */; };
 		609E47541F644D37000EF712 /* OniDreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E47531F644D37000EF712 /* OniDreamTests.swift */; };
 		609E475F1F644D37000EF712 /* OniDreamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E475E1F644D37000EF712 /* OniDreamUITests.swift */; };
+		60D9EB0B1F6456080068969F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB0A1F6456080068969F /* Constants.swift */; };
+		A33AF98F86B9C0F1640F6F63 /* Pods_OniDreamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888A10BDB7AE8DF0D06DDF61 /* Pods_OniDreamUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2586AED138720FD4CFAFCB5E /* Pods_OniDream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OniDream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E256012D17017C5886C6FD2 /* Pods_OniDreamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OniDreamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35BDEF1C4C9451D7B752B705 /* Pods-OniDream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OniDream/Pods-OniDream.debug.xcconfig"; sourceTree = "<group>"; };
 		609E47391F644D37000EF712 /* OniDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OniDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		609E473C1F644D37000EF712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		609E473E1F644D37000EF712 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +56,13 @@
 		609E475A1F644D37000EF712 /* OniDreamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OniDreamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		609E475E1F644D37000EF712 /* OniDreamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OniDreamUITests.swift; sourceTree = "<group>"; };
 		609E47601F644D37000EF712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60D9EB0A1F6456080068969F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		888A10BDB7AE8DF0D06DDF61 /* Pods_OniDreamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OniDreamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A5352A4A4FA803E6A7FFEBC /* Pods-OniDream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDream.release.xcconfig"; path = "Pods/Target Support Files/Pods-OniDream/Pods-OniDream.release.xcconfig"; sourceTree = "<group>"; };
+		AE4BF0196340B2F59A32AA3D /* Pods-OniDreamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamTests/Pods-OniDreamTests.release.xcconfig"; sourceTree = "<group>"; };
+		B6182FE19090C7E292288FD1 /* Pods-OniDreamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamUITests/Pods-OniDreamUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DFEB90B3D392068A36B345C5 /* Pods-OniDreamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamTests/Pods-OniDreamTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F640634461F2FC07BD80B5B0 /* Pods-OniDreamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamUITests/Pods-OniDreamUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D54DFC1F44EC03713B9A36A /* Pods_OniDream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A6CBE2584E07F69D2AEC52 /* Pods_OniDreamTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +86,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A33AF98F86B9C0F1640F6F63 /* Pods_OniDreamUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2981154D42BB7C6D9F471C1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2586AED138720FD4CFAFCB5E /* Pods_OniDream.framework */,
+				2E256012D17017C5886C6FD2 /* Pods_OniDreamTests.framework */,
+				888A10BDB7AE8DF0D06DDF61 /* Pods_OniDreamUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		609E47301F644D37000EF712 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +110,8 @@
 				609E47521F644D37000EF712 /* OniDreamTests */,
 				609E475D1F644D37000EF712 /* OniDreamUITests */,
 				609E473A1F644D37000EF712 /* Products */,
+				F067DAB0C7477BC00DE22E29 /* Pods */,
+				2981154D42BB7C6D9F471C1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +128,11 @@
 		609E473B1F644D37000EF712 /* OniDream */ = {
 			isa = PBXGroup;
 			children = (
+				60D9EB091F64552D0068969F /* Helpers */,
+				60D9EB081F6455240068969F /* Stores */,
+				60D9EB071F64551D0068969F /* Controllers */,
+				60D9EB061F6455150068969F /* Views */,
+				60D9EB051F64550F0068969F /* Models */,
 				609E473C1F644D37000EF712 /* AppDelegate.swift */,
 				609E473E1F644D37000EF712 /* FirstViewController.swift */,
 				609E47401F644D37000EF712 /* SecondViewController.swift */,
@@ -106,6 +140,7 @@
 				609E47451F644D37000EF712 /* Assets.xcassets */,
 				609E47471F644D37000EF712 /* LaunchScreen.storyboard */,
 				609E474A1F644D37000EF712 /* Info.plist */,
+				60D9EB0A1F6456080068969F /* Constants.swift */,
 			);
 			path = OniDream;
 			sourceTree = "<group>";
@@ -128,6 +163,54 @@
 			path = OniDreamUITests;
 			sourceTree = "<group>";
 		};
+		60D9EB051F64550F0068969F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		60D9EB061F6455150068969F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		60D9EB071F64551D0068969F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		60D9EB081F6455240068969F /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		60D9EB091F64552D0068969F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F067DAB0C7477BC00DE22E29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35BDEF1C4C9451D7B752B705 /* Pods-OniDream.debug.xcconfig */,
+				8A5352A4A4FA803E6A7FFEBC /* Pods-OniDream.release.xcconfig */,
+				DFEB90B3D392068A36B345C5 /* Pods-OniDreamTests.debug.xcconfig */,
+				AE4BF0196340B2F59A32AA3D /* Pods-OniDreamTests.release.xcconfig */,
+				F640634461F2FC07BD80B5B0 /* Pods-OniDreamUITests.debug.xcconfig */,
+				B6182FE19090C7E292288FD1 /* Pods-OniDreamUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 609E47631F644D37000EF712 /* Build configuration list for PBXNativeTarget "OniDream" */;
 			buildPhases = (
+				FF9A81EA149C065C1D80BF53 /* [CP] Check Pods Manifest.lock */,
 				609E47351F644D37000EF712 /* Sources */,
 				609E47361F644D37000EF712 /* Frameworks */,
 				609E47371F644D37000EF712 /* Resources */,
+				E5952BCB2FA2E38BF0321721 /* [CP] Embed Pods Frameworks */,
+				9958BA87A20D1368C221B42D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +238,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 609E47661F644D37000EF712 /* Build configuration list for PBXNativeTarget "OniDreamTests" */;
 			buildPhases = (
+				F88BD5A94BA0542FA0AF35E0 /* [CP] Check Pods Manifest.lock */,
 				609E474B1F644D37000EF712 /* Sources */,
 				609E474C1F644D37000EF712 /* Frameworks */,
 				609E474D1F644D37000EF712 /* Resources */,
+				649E7068F214F0489E5F6D1D /* [CP] Embed Pods Frameworks */,
+				74048DE1A38E826F101A5392 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +259,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 609E47691F644D37000EF712 /* Build configuration list for PBXNativeTarget "OniDreamUITests" */;
 			buildPhases = (
+				5CB23967A8E008E2F986294D /* [CP] Check Pods Manifest.lock */,
 				609E47561F644D37000EF712 /* Sources */,
 				609E47571F644D37000EF712 /* Frameworks */,
 				609E47581F644D37000EF712 /* Resources */,
+				E1F9E94470FD12E130AE65E8 /* [CP] Embed Pods Frameworks */,
+				10FFAA654670D8695E3E8D28 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,6 +352,153 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10FFAA654670D8695E3E8D28 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OniDreamUITests/Pods-OniDreamUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CB23967A8E008E2F986294D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OniDreamUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		649E7068F214F0489E5F6D1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OniDreamTests/Pods-OniDreamTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74048DE1A38E826F101A5392 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OniDreamTests/Pods-OniDreamTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9958BA87A20D1368C221B42D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OniDream/Pods-OniDream-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1F9E94470FD12E130AE65E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OniDreamUITests/Pods-OniDreamUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5952BCB2FA2E38BF0321721 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OniDream/Pods-OniDream-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F88BD5A94BA0542FA0AF35E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OniDreamTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF9A81EA149C065C1D80BF53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OniDream-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		609E47351F644D37000EF712 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -268,6 +507,7 @@
 				609E47411F644D37000EF712 /* SecondViewController.swift in Sources */,
 				609E473D1F644D37000EF712 /* AppDelegate.swift in Sources */,
 				609E473F1F644D37000EF712 /* FirstViewController.swift in Sources */,
+				60D9EB0B1F6456080068969F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +657,7 @@
 		};
 		609E47641F644D37000EF712 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35BDEF1C4C9451D7B752B705 /* Pods-OniDream.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9Q4H85X97E;
@@ -430,6 +671,7 @@
 		};
 		609E47651F644D37000EF712 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A5352A4A4FA803E6A7FFEBC /* Pods-OniDream.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9Q4H85X97E;
@@ -443,6 +685,7 @@
 		};
 		609E47671F644D37000EF712 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFEB90B3D392068A36B345C5 /* Pods-OniDreamTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,6 +701,7 @@
 		};
 		609E47681F644D37000EF712 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE4BF0196340B2F59A32AA3D /* Pods-OniDreamTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -473,6 +717,7 @@
 		};
 		609E476A1F644D37000EF712 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F640634461F2FC07BD80B5B0 /* Pods-OniDreamUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9Q4H85X97E;
@@ -487,6 +732,7 @@
 		};
 		609E476B1F644D37000EF712 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6182FE19090C7E292288FD1 /* Pods-OniDreamUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9Q4H85X97E;
@@ -518,6 +764,7 @@
 				609E47651F644D37000EF712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		609E47661F644D37000EF712 /* Build configuration list for PBXNativeTarget "OniDreamTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +773,7 @@
 				609E47681F644D37000EF712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		609E47691F644D37000EF712 /* Build configuration list for PBXNativeTarget "OniDreamUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +782,7 @@
 				609E476B1F644D37000EF712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
