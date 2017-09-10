@@ -7,20 +7,18 @@
 //
 
 import UIKit
-import PinLayout
+import SnapKit
+import Spring
 
-class Card: UIView {
+class Card: SpringView {
 	// MARK: The header of the card (with a title and a second label)
 	let header: CardHeader
-	// MARK: The main part of the card (it's the superview of the content)
-	let main: UIView
 	// MARK: The content that's a subview of the main
-	let content: UIView
+	var content: UIView
 	
 	init(header: CardHeader, content: UIView) {
 		self.header = header
 		self.content = content
-		self.main = UIView()
 		super.init(frame: CGRect.zero)
 	}
 	
@@ -38,39 +36,43 @@ class Card: UIView {
 			rightInfoView: rightInfoLabel
 		)
 		
-		self.main = UIView()
 		self.content = content
 		super.init(frame: CGRect.zero)
+		
+		self.backgroundColor = Color.white50
+		self.addSubviews()
+	}
+	
+	override func updateConstraints() {
+		
+		self.header.snp.makeConstraints { (make) -> Void in
+			make.height.equalTo(50)
+			make.top.equalTo(self)
+			make.left.equalTo(self)
+			make.right.equalTo(self)
+		}
+		
+		self.content.snp.makeConstraints { (make) -> Void in
+			make.bottom.equalTo(self).offset(-Style.margin)
+			make.top.equalTo(header.snp.bottom).offset(Style.margin)
+			make.left.equalTo(self).offset(Style.margin)
+			make.right.equalTo(self).offset(-Style.margin)
+		}
+		
+		super.updateConstraints()
 	}
 	
     override func draw(_ rect: CGRect) {
-		// MARK: Building the layout
-		self.buildLayout()
 		// MARK: Styling the card
 		self.styleCard()
 		// MARK: Styling the content
 		self.styleContent()
-		// MARK: Style the main
-		self.styleMain()
 	}
 	
-	override func layoutSubviews() {
-		// MARK: It seems to be the only way to change bgColor
-		self.backgroundColor = Color.white50
-		
-		super.layoutSubviews()
-	}
-	
-	private func buildLayout() {
+	private func addSubviews() {
 		// MARK: Nesting the views
 		self.addSubview(header)
-		self.addSubview(main)
-		self.main.addSubview(content)
-		
-		// MARK: Positionning the views
-		header.pin.left().right().height(50)
-		main.pin.below(of: header).left().bottom().right()
-		content.pin.left().bottom().right().top().margin(Style.margin)
+		self.addSubview(content)
 	}
 	
 	private func styleCard() {
@@ -78,11 +80,13 @@ class Card: UIView {
 		self.layer.masksToBounds = true
 	}
 	
-	private func styleMain() {
-	}
-	
 	private func styleContent() {
 		content.backgroundColor = Color.clear
+
+		if let content = self.content as? UILabel {
+			content.numberOfLines = 0
+			content.sizeToFit()
+		}
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -100,25 +104,53 @@ class CardHeader: UIView {
 		self.hasRightInfo = hasRightInfo
 		self.rightInfoView = rightInfoView
 		super.init(frame: CGRect())
+		
 		self.backgroundColor = Color.white50
+		// Adding the subviews
+		self.addSubviews()
 	}
 	
-	override func draw(_ rect: CGRect) {
-		// Layout
+	private func addSubviews() {
+		// Adding subviews
 		self.addSubview(self.titleView)
 		if (self.hasRightInfo) {
 			self.addSubview(self.rightInfoView)
-			self.rightInfoView.pin.top().bottom().right().width(100).marginRight(Style.margin)
-			self.titleView.pin.left(of: self.rightInfoView, aligned: .top).bottom().left().marginRight(Style.margin).marginLeft(Style.margin)
-		} else {
-			self.titleView.pin.left().bottom().right().top().margin(Style.margin)
 		}
-		
+	}
+	
+	override func draw(_ rect: CGRect) {
 		// Styling subviews
 		self.styleTitleView()
 		if (self.hasRightInfo) {
 			self.styleRightInfoView()
 		}
+	}
+	
+	override func updateConstraints() {
+		if (self.hasRightInfo) {
+			self.rightInfoView.snp.makeConstraints { (make) -> Void in
+				make.width.equalTo(100)
+				make.top.equalTo(self)
+				make.bottom.equalTo(self)
+				make.right.equalTo(self).offset(-Style.margin)
+			}
+		
+			self.titleView.snp.makeConstraints { (make) -> Void in
+				make.right.equalTo(rightInfoView.snp.left)
+				make.top.equalTo(self)
+				make.bottom.equalTo(self)
+				make.left.equalTo(self).offset(Style.margin)
+			}
+		} else {
+			self.titleView.snp.makeConstraints { (make) -> Void in
+				make.right.equalTo(self).offset(-Style.margin)
+				make.top.equalTo(self)
+				make.bottom.equalTo(self)
+				make.left.equalTo(self).offset(Style.margin)
+			}
+		}
+		
+		super.updateConstraints()
 	}
 	
 	private func styleTitleView() {

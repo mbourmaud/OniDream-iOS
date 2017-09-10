@@ -8,13 +8,18 @@ target 'OniDream' do
   # Pods for OniDream
   pod 'Alamofire'
   pod 'DateToolsSwift'
+  pod 'SnapKit', '~> 3.0'
   pod 'PinLayout'
   pod 'SwiftyJSON'
   pod 'KeychainSwift', '~> 8.0'
   pod 'RealmSwift'
   pod 'SwiftCharts', '~> 0.6'
   pod 'Hue', '~> 2.0'
-  pod 'NVActivityIndicatorView', '~> 3.7'
+  pod 'NVActivityIndicatorView'
+  pod 'SwiftIcons'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+  pod 'SwiftMessages'
+  pod 'PieCharts'
 
   target 'OniDreamTests' do
     inherit! :search_paths

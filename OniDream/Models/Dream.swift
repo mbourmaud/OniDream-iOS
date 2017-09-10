@@ -23,7 +23,10 @@ class Dream: Object {
 	}
 	
 	required init() {
-		fatalError("init() has not been implemented")
+		self.title = ""
+		self.content = ""
+		self.date = Date()
+		super.init()
 	}
 	
 	required init(value: Any, schema: RLMSchema) {

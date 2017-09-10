@@ -24,6 +24,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PieCharts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>PinLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,7 +64,37 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Spring.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftCharts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftIcons-SwiftIcons.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftIcons.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftMessages-SwiftMessages.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftMessages.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -67,7 +107,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1DB2130F2A1B72B4F5FF69BDB4F905B9</key>
+		<key>385F74ECF6E143740DB95271DD56557C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +117,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>472246C19FF66E3EEEC8566F302C36D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5BE26E551C6E75B5823D56DF4A0046AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>62855EDD3C83875E5077D0FC0782CB74</key>
+		<key>5E4B9D023702B55BE61C5C148DF100EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85127E74201450240519D32E4196008D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +147,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A4115DF17B6925F8D11F00DB51F5FFF9</key>
+		<key>8D02FC08FB2AF916D11480889CC27E4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A05EC4F778F9740C8ADB35197869F1E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9EC61D104D30AA83A114F05D8ED2905</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,6 +172,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>D07A1EAB8A38B458509E4274232533A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E89CFD99B895BCC6E8EDC2F95A03500C</key>
 		<dict>
 			<key>primary</key>
@@ -117,12 +187,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB93C00243F451D509DCEC0FD62324CD</key>
+		<key>EFD20C8E4B7D8BB8DD79D14DAD7FB08F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F73191687E4F13AE4EE296FEBBE70185</key>
+		<key>F116AD98A2BDF8453CF746D9DA4806ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F98A2C1E075F19B746C9056971B06FE1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAD77F184B2D266253644021D364D2FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

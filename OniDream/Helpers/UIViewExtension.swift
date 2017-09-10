@@ -18,4 +18,14 @@ extension UIView {
 		self.layer.mask = rectShape
 	}
 	
+	func setViewBackgroundGradient(sender: UIViewController, _ topColor:UIColor, _ bottomColor:UIColor) {
+		
+		let gradient = CAGradientLayer()
+		let gradientLocations = [0.0, 0.8]
+		
+		gradient.locations = gradientLocations as [NSNumber]
+		gradient.frame = sender.view.bounds
+		gradient.colors = [topColor.cgColor, bottomColor.cgColor]
+		sender.view.layer.insertSublayer(gradient, at: 0)
+	}
 }

@@ -14,6 +14,19 @@ internal struct	APIConfig {
 	internal static let url = ""
 }
 
+internal struct Identifier {
+	// MARK: Cell Identifiers
+	internal static let dreamTableViewCell = "dreamTableViewCell"
+	
+	// MARK: Segues Identifiers
+	
+	// MARK: ViewControllers Identifiers
+	internal static let statisticsNavigationController = "statisticsNavigationController"
+	internal static let dreamBookNavigationController = "dreamBookNavigationController"
+	internal static let profileNavigationController = "profileNavigationController"
+	internal static let settingsNavigationController = "settingsNavigationController"
+}
+
 internal struct Color {
 	// MARK: Main Colors
 	internal static let blue = UIColor(red:0.24, green:0.47, blue:0.75, alpha:1.0)
@@ -52,4 +65,7 @@ internal struct Style {
 	internal static let textFont: UIFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightThin)
 	internal static let navigationFont: UIFont = UIFont.boldSystemFont(ofSize: 20)
 	internal static let charSpacing: CGFloat = 0.3
+	
+	// MARK: Icon Sizes
+	internal static let tabBarIconSize: CGFloat = 40
 }

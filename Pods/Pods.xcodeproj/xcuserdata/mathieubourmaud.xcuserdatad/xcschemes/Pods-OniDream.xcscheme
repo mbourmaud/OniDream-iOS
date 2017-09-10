@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "62855EDD3C83875E5077D0FC0782CB74"
+               BlueprintIdentifier = "F98A2C1E075F19B746C9056971B06FE1"
                BuildableName = "Pods_OniDream.framework"
                BlueprintName = "Pods-OniDream"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "62855EDD3C83875E5077D0FC0782CB74"
+            BlueprintIdentifier = "F98A2C1E075F19B746C9056971B06FE1"
             BuildableName = "Pods_OniDream.framework"
             BlueprintName = "Pods-OniDream"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -10,8 +10,6 @@
 		4D54DFC1F44EC03713B9A36A /* Pods_OniDream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2586AED138720FD4CFAFCB5E /* Pods_OniDream.framework */; };
 		54A6CBE2584E07F69D2AEC52 /* Pods_OniDreamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E256012D17017C5886C6FD2 /* Pods_OniDreamTests.framework */; };
 		609E473D1F644D37000EF712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E473C1F644D37000EF712 /* AppDelegate.swift */; };
-		609E473F1F644D37000EF712 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E473E1F644D37000EF712 /* FirstViewController.swift */; };
-		609E47411F644D37000EF712 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E47401F644D37000EF712 /* SecondViewController.swift */; };
 		609E47441F644D37000EF712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609E47421F644D37000EF712 /* Main.storyboard */; };
 		609E47461F644D37000EF712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609E47451F644D37000EF712 /* Assets.xcassets */; };
 		609E47491F644D37000EF712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609E47471F644D37000EF712 /* LaunchScreen.storyboard */; };
@@ -19,6 +17,12 @@
 		609E475F1F644D37000EF712 /* OniDreamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E475E1F644D37000EF712 /* OniDreamUITests.swift */; };
 		60B1EA4A1F64692500F02240 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1EA491F64692500F02240 /* UIViewExtension.swift */; };
 		60B1EA4C1F64698C00F02240 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1EA4B1F64698C00F02240 /* UILabelExtension.swift */; };
+		60C3BCF41F654539000F2528 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF31F654539000F2528 /* StatisticsViewController.swift */; };
+		60C3BCF81F6590A9000F2528 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF71F6590A9000F2528 /* DreamTableViewCell.swift */; };
+		60C3BCFA1F6590BA000F2528 /* DreamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF91F6590BA000F2528 /* DreamsTableViewController.swift */; };
+		60C3BCFC1F65985C000F2528 /* DreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCFB1F65985C000F2528 /* DreamViewController.swift */; };
+		60C3BCFE1F659A42000F2528 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCFD1F659A42000F2528 /* TabBarViewController.swift */; };
+		60C3BD001F659B3C000F2528 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCFF1F659B3C000F2528 /* UIImageExtension.swift */; };
 		60D9EB0B1F6456080068969F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB0A1F6456080068969F /* Constants.swift */; };
 		60D9EB0D1F6461C10068969F /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB0C1F6461C10068969F /* Dream.swift */; };
 		60D9EB151F6464690068969F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB141F6464690068969F /* Card.swift */; };
@@ -52,8 +56,6 @@
 		35BDEF1C4C9451D7B752B705 /* Pods-OniDream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OniDream/Pods-OniDream.debug.xcconfig"; sourceTree = "<group>"; };
 		609E47391F644D37000EF712 /* OniDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OniDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		609E473C1F644D37000EF712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		609E473E1F644D37000EF712 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		609E47401F644D37000EF712 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		609E47431F644D37000EF712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		609E47451F644D37000EF712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		609E47481F644D37000EF712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +68,12 @@
 		609E47601F644D37000EF712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60B1EA491F64692500F02240 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		60B1EA4B1F64698C00F02240 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		60C3BCF31F654539000F2528 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		60C3BCF71F6590A9000F2528 /* DreamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamTableViewCell.swift; sourceTree = "<group>"; };
+		60C3BCF91F6590BA000F2528 /* DreamsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamsTableViewController.swift; sourceTree = "<group>"; };
+		60C3BCFB1F65985C000F2528 /* DreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamViewController.swift; sourceTree = "<group>"; };
+		60C3BCFD1F659A42000F2528 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		60C3BCFF1F659B3C000F2528 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		60D9EB0A1F6456080068969F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		60D9EB0C1F6461C10068969F /* Dream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dream.swift; sourceTree = "<group>"; };
 		60D9EB141F6464690068969F /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -150,8 +158,6 @@
 				60D9EB061F6455150068969F /* Views */,
 				60D9EB051F64550F0068969F /* Models */,
 				609E473C1F644D37000EF712 /* AppDelegate.swift */,
-				609E473E1F644D37000EF712 /* FirstViewController.swift */,
-				609E47401F644D37000EF712 /* SecondViewController.swift */,
 				609E47421F644D37000EF712 /* Main.storyboard */,
 				609E47451F644D37000EF712 /* Assets.xcassets */,
 				609E47471F644D37000EF712 /* LaunchScreen.storyboard */,
@@ -195,6 +201,7 @@
 				60D9EB1A1F6464B10068969F /* Button.swift */,
 				60D9EB1C1F6464D50068969F /* Input.swift */,
 				60D9EB1E1F6465040068969F /* Cell.swift */,
+				60C3BCF71F6590A9000F2528 /* DreamTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +209,10 @@
 		60D9EB071F64551D0068969F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				60C3BCF31F654539000F2528 /* StatisticsViewController.swift */,
+				60C3BCF91F6590BA000F2528 /* DreamsTableViewController.swift */,
+				60C3BCFB1F65985C000F2528 /* DreamViewController.swift */,
+				60C3BCFD1F659A42000F2528 /* TabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +229,7 @@
 			children = (
 				60B1EA491F64692500F02240 /* UIViewExtension.swift */,
 				60B1EA4B1F64698C00F02240 /* UILabelExtension.swift */,
+				60C3BCFF1F659B3C000F2528 /* UIImageExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -481,10 +493,16 @@
 				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/PieCharts/PieCharts.framework",
 				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftIcons/SwiftIcons.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -493,10 +511,16 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PieCharts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCharts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIcons.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,18 +571,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				609E47411F644D37000EF712 /* SecondViewController.swift in Sources */,
 				60D9EB191F64649D0068969F /* Modal.swift in Sources */,
 				60B1EA4A1F64692500F02240 /* UIViewExtension.swift in Sources */,
 				60D9EB151F6464690068969F /* Card.swift in Sources */,
+				60C3BCF81F6590A9000F2528 /* DreamTableViewCell.swift in Sources */,
 				60B1EA4C1F64698C00F02240 /* UILabelExtension.swift in Sources */,
 				609E473D1F644D37000EF712 /* AppDelegate.swift in Sources */,
-				609E473F1F644D37000EF712 /* FirstViewController.swift in Sources */,
+				60C3BCF41F654539000F2528 /* StatisticsViewController.swift in Sources */,
 				60D9EB1D1F6464D50068969F /* Input.swift in Sources */,
 				60D9EB0D1F6461C10068969F /* Dream.swift in Sources */,
 				60D9EB1F1F6465040068969F /* Cell.swift in Sources */,
 				60D9EB0B1F6456080068969F /* Constants.swift in Sources */,
 				60D9EB1B1F6464B10068969F /* Button.swift in Sources */,
+				60C3BCFC1F65985C000F2528 /* DreamViewController.swift in Sources */,
+				60C3BCFE1F659A42000F2528 /* TabBarViewController.swift in Sources */,
+				60C3BCFA1F6590BA000F2528 /* DreamsTableViewController.swift in Sources */,
+				60C3BD001F659B3C000F2528 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
