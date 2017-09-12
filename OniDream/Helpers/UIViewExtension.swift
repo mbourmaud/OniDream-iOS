@@ -21,7 +21,7 @@ extension UIView {
 	func setViewBackgroundGradient(sender: UIViewController, _ topColor:UIColor, _ bottomColor:UIColor) {
 		
 		let gradient = CAGradientLayer()
-		let gradientLocations = [0.0, 0.8]
+		let gradientLocations = [0.5, 0.8]
 		
 		gradient.locations = gradientLocations as [NSNumber]
 		gradient.frame = sender.view.bounds

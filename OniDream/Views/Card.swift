@@ -39,7 +39,7 @@ class Card: SpringView {
 		self.content = content
 		super.init(frame: CGRect.zero)
 		
-		self.backgroundColor = Color.white50
+		self.backgroundColor = Color.white30
 		self.addSubviews()
 	}
 	
@@ -143,7 +143,7 @@ class CardHeader: UIView {
 			}
 		} else {
 			self.titleView.snp.makeConstraints { (make) -> Void in
-				make.right.equalTo(self).offset(-Style.margin)
+				make.right.equalTo(self).offset(Style.margin)
 				make.top.equalTo(self)
 				make.bottom.equalTo(self)
 				make.left.equalTo(self).offset(Style.margin)

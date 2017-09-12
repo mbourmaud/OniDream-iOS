@@ -15,10 +15,13 @@ internal struct	APIConfig {
 }
 
 internal struct Identifier {
-	// MARK: Cell Identifiers
+	// MARK: Cells Identifiers
 	internal static let dreamTableViewCell = "dreamTableViewCell"
 	
 	// MARK: Segues Identifiers
+	internal static let unwindToDreams = "unwindToDreams"
+	internal static let composeDream = "composeDream"
+	internal static let editDream = "editDream"
 	
 	// MARK: ViewControllers Identifiers
 	internal static let statisticsNavigationController = "statisticsNavigationController"
@@ -49,8 +52,9 @@ internal struct Color {
 	internal static let gradient = [Color.purple, Color.blue].gradient()
 	
 	// MARK: Text Colors
-	internal static let titleColor = UIColor.black.alpha(0.8)
-	internal static let textColor = UIColor.black.alpha(0.7)
+	internal static let titleColor = UIColor.black.alpha(0.6)
+	internal static let textColor = UIColor.black.alpha(0.8)
+	internal static let placeholderColor = UIColor.black.alpha(0.4)
 }
 
 
@@ -61,9 +65,10 @@ internal struct Style {
 	internal static let margin: CGFloat = 10
 	
 	// MARK: Font
-	internal static let titleFont: UIFont = UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)
-	internal static let textFont: UIFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightThin)
-	internal static let navigationFont: UIFont = UIFont.boldSystemFont(ofSize: 20)
+	internal static let titleFont: UIFont = UIFont.systemFont(ofSize: 19)
+	internal static let textFont: UIFont = UIFont.systemFont(ofSize: 18)
+	internal static let placeholderFont: UIFont = UIFont.italicSystemFont(ofSize: Style.textFont.pointSize)
+	internal static let navigationFont: UIFont = UIFont.boldSystemFont(ofSize: 22)
 	internal static let charSpacing: CGFloat = 0.3
 	
 	// MARK: Icon Sizes

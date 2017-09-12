@@ -27,10 +27,9 @@
         <!--Item-->
         <scene sceneID="nYI-Gg-jhc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fCC-6A-Kka" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="profileNavigationController" id="d5j-AV-kpO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="4vA-Sd-y6Z"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e9q-qM-E2w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e9q-qM-E2w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -38,13 +37,14 @@
                         <segue destination="DPL-SI-fxB" kind="relationship" relationship="rootViewController" id="W45-o2-wVa"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCC-6A-Kka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1006" y="-128"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="nj4-in-Hi7">
             <objects>
-                <viewController id="DPL-SI-fxB" sceneMemberID="viewController">
+                <viewController id="DPL-SI-fxB" customClass="LoginViewController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0JF-BO-VUH"/>
                         <viewControllerLayoutGuide type="bottom" id="xmm-Bh-rKY"/>
@@ -54,13 +54,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yTl-Ki-hnx"/>
+                    <navigationItem key="navigationItem" title="Profile" id="yTl-Ki-hnx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZN-t7-xsp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1006" y="699"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Settings-->
         <scene sceneID="7pK-lh-hCt">
             <objects>
                 <tableViewController id="Mi5-Gh-hv2" sceneMemberID="viewController">
@@ -83,7 +83,7 @@
                             <outlet property="delegate" destination="Mi5-Gh-hv2" id="d2K-pG-2oI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ITC-4h-NGa"/>
+                    <navigationItem key="navigationItem" title="Settings" id="ITC-4h-NGa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSs-us-AHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,10 +92,9 @@
         <!--Item-->
         <scene sceneID="B75-di-qgv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2yy-NE-YXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="settingsNavigationController" id="wI5-4B-zsk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="fyJ-9b-Pua"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dOI-Jo-9dn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dOI-Jo-9dn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -103,6 +102,7 @@
                         <segue destination="Mi5-Gh-hv2" kind="relationship" relationship="rootViewController" id="JBT-By-aAf"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yy-NE-YXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2062" y="-128"/>
         </scene>
@@ -119,28 +119,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QO2-Dw-dTg"/>
+                    <navigationItem key="navigationItem" title="Statistics" id="QO2-Dw-dTg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEv-hU-QGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2090" y="699"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Dream Book-->
         <scene sceneID="n4B-3f-bG4">
             <objects>
-                <tableViewController id="PAE-Gu-qZc" customClass="DreamsTableViewController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mAY-2q-FL8">
+                <tableViewController title="Dream Book" id="PAE-Gu-qZc" customClass="DreamsTableViewController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="mAY-2q-FL8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dreamTableViewCell" rowHeight="44" id="7jy-Db-id4" customClass="DreamTableViewCell" customModule="OniDream" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="dreamTableViewCell" rowHeight="200" id="7jy-Db-id4" customClass="DreamTableViewCell" customModule="OniDream" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7jy-Db-id4" id="Txt-z0-jFj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="EPZ-Bb-iTr" kind="show" identifier="editDream" id="V6X-u4-YYH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -149,7 +152,10 @@
                             <outlet property="delegate" destination="PAE-Gu-qZc" id="sxE-87-B8x"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Q8V-zI-uKN"/>
+                    <navigationItem key="navigationItem" title="Dream Book" id="Q8V-zI-uKN"/>
+                    <connections>
+                        <segue destination="EPZ-Bb-iTr" kind="show" identifier="composeDream" id="msW-sf-rba"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p47-TZ-uU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,18 +174,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="xZD-TF-2Eb" kind="unwind" identifier="unwindToDreams" unwindAction="unwindToDreams:" id="oPX-Sw-1Ny"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToY-5j-hlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xZD-TF-2Eb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-948" y="1403"/>
+            <point key="canvasLocation" x="-954" y="1472"/>
         </scene>
         <!--Item-->
         <scene sceneID="cx0-sJ-IyB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gJj-eJ-j5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="dreamBookNavigationController" id="nPe-yU-S6H" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="c2K-5U-Kve"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hJl-GO-gtq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hJl-GO-gtq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -187,16 +196,16 @@
                         <segue destination="PAE-Gu-qZc" kind="relationship" relationship="rootViewController" id="2vT-kd-L7h"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJj-eJ-j5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-954" y="-128"/>
         </scene>
         <!--Item-->
         <scene sceneID="xbb-tW-wEK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6pB-UT-dSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="statisticsNavigationController" id="aaK-ym-9WV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="tRm-8U-zno"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QHG-Ma-dg2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QHG-Ma-dg2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -204,8 +213,12 @@
                         <segue destination="cMI-Vb-Iq9" kind="relationship" relationship="rootViewController" id="deV-xS-c0j"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pB-UT-dSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2090" y="-128"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="V6X-u4-YYH"/>
+    </inferredMetricsTieBreakers>
 </document>

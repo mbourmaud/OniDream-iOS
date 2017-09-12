@@ -39,18 +39,18 @@ class StatisticsViewController: UIViewController {
 	
 		barCard.snp.makeConstraints { (make) -> Void in
 			make.height.equalTo(300)
-			make.left.equalTo(self.view).offset(20)
-			make.top.equalTo(self.scrollView).offset(20)
-			make.right.equalTo(self.view).offset(-20)
+			make.left.equalTo(self.view).offset(Style.margin)
+			make.top.equalTo(self.scrollView).offset(Style.margin)
+			make.right.equalTo(self.view).offset(-Style.margin)
 		}
 		
 		
 		pieCard.snp.makeConstraints { (make) -> Void in
 			make.height.equalTo(300)
-			make.left.equalTo(self.view).offset(20)
-			make.top.equalTo(barCard.snp.bottom).offset(20)
-			make.right.equalTo(self.view).offset(-20)
-			make.bottom.equalTo(self.scrollView).offset(-20)
+			make.left.equalTo(self.view).offset(Style.margin)
+			make.top.equalTo(barCard.snp.bottom).offset(Style.margin)
+			make.right.equalTo(self.view).offset(-Style.margin)
+			make.bottom.equalTo(self.scrollView).offset(-Style.margin)
 		}
 		
 		self.scrollView.contentSize = CGSize(width: barCard.bounds.size.width + pieCard.bounds.size.width,

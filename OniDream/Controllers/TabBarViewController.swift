@@ -22,19 +22,37 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 		
 		// Statistics Tab
 		let statisticsTab = storyboard!.instantiateViewController(withIdentifier: Identifier.statisticsNavigationController)
-		let statisticsImage = UIImage.init(icon: .googleMaterialDesign(.pieChartOutlined), size: CGSize(width: Style.tabBarIconSize, height: Style.tabBarIconSize))
-		let statisticsImageSelected = UIImage.init(icon: .googleMaterialDesign(.pieChart), size: CGSize(width: Style.tabBarIconSize, height: Style.tabBarIconSize))
+		let statisticsImage = #imageLiteral(resourceName: "statistics")
+		let statisticsImageSelected = #imageLiteral(resourceName: "statisticsSelected")
 		let statisticsTabBarItem = UITabBarItem(title: nil, image: statisticsImage, selectedImage: statisticsImageSelected)
+		statisticsTabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
 		statisticsTab.tabBarItem = statisticsTabBarItem
 		
 		// Dream Book Tab
 		let dreamBookTab = storyboard!.instantiateViewController(withIdentifier: Identifier.dreamBookNavigationController)
-		let dreamBookImage = UIImage.init(icon: .icofont(.bookAlt), size: CGSize(width: Style.tabBarIconSize, height: Style.tabBarIconSize))
-		let dreamBookImageSelected = UIImage.init(icon: .icofont(.book), size: CGSize(width: Style.tabBarIconSize, height: Style.tabBarIconSize))
+		let dreamBookImage = #imageLiteral(resourceName: "dreamBook")
+		let dreamBookImageSelected = #imageLiteral(resourceName: "dreamBookSelected")
 		let dreamBookTabBarItem = UITabBarItem(title: nil, image: dreamBookImage, selectedImage: dreamBookImageSelected)
+		dreamBookTabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
 		dreamBookTab.tabBarItem = dreamBookTabBarItem
 		
-		self.viewControllers = [statisticsTab, dreamBookTab]
+		// Profile Tab
+		let profileTab = storyboard!.instantiateViewController(withIdentifier: Identifier.profileNavigationController)
+		let profileImage = #imageLiteral(resourceName: "profile")
+		let profileImageSelected = #imageLiteral(resourceName: "profileSelected")
+		let profileTabBarItem = UITabBarItem(title: nil, image: profileImage, selectedImage: profileImageSelected)
+		profileTabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+		profileTab.tabBarItem = profileTabBarItem
+		
+		// Settings Tab
+		let settingsTab = storyboard!.instantiateViewController(withIdentifier: Identifier.settingsNavigationController)
+		let settingsImage = #imageLiteral(resourceName: "settings")
+		let settingsImageSelected = #imageLiteral(resourceName: "settingsSelected")
+		let settingsTabBarItem = UITabBarItem(title: nil, image: settingsImage, selectedImage: settingsImageSelected)
+		settingsTabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+		settingsTab.tabBarItem = settingsTabBarItem
+		
+		self.viewControllers = [statisticsTab, dreamBookTab, profileTab, settingsTab]
 		
 		self.tabBar.selectionIndicatorImage = UIImage().createSelectionIndicator(color: UIColor.white, size: CGSize(width: tabBar.frame.width/CGFloat(tabBar.items!.count), height: tabBar.frame.height), lineWidth: 2.0)
 	}

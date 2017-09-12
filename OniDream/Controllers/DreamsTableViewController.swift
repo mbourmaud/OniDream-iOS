@@ -9,28 +9,27 @@
 import UIKit
 
 class DreamsTableViewController: UITableViewController {
-	let dreams: [Dream] = []
+	var dreams: [Dream] = []
 	var selectedDream: Dream = Dream()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		self.tableView.setTableViewBackgroundGradient(sender: self, Color.purple, Color.blue)
+		self.tableView.separatorStyle = .none
+
 		self.drawNavigationBar()
     }
 	
-	private func drawNavigationBar() {
-		/* Title */
-		self.navigationController!.title = "Dream Book"
-		self.tabBarItem.title = nil
-		
-		/* Edit Button */
-		self.navigationItem.leftBarButtonItem = self.editButtonItem
-		
+	private func drawNavigationBar() {		
 		/* Add Button */
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeDreamTapped))
 	}
 	
 	func composeDreamTapped(_ sender: UIBarButtonItem) {
-		print("Compose Dream Tapped")
+		print("COMPOSE DREAM TAPPED")
+		self.selectedDream = Dream()
+		self.performSegue(withIdentifier: Identifier.composeDream, sender: self)
 	}
 
     override func didReceiveMemoryWarning() {
@@ -71,26 +70,53 @@ class DreamsTableViewController: UITableViewController {
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.selectedDream = dreams[indexPath.row]
-		performSegue(withIdentifier: "showDream", sender: self)
+		print("DID SELECT ROW")
+		print(self.selectedDream.description)
 	}
 
 	
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
+		if editingStyle == .delete {
+			self.dreams.remove(at: (indexPath as NSIndexPath).row)
+			tableView.deleteRows(at: [indexPath], with: .fade)
+			
+			/* We save the modifications into the local storage */
+			//self.dreamsService.dreams = self.dreams
+			//self.dreamsService.saveDreams()
+		}
     }
+	
+	@IBAction func unwindToDreams(_ sender: UIStoryboardSegue) {
+		/* If the sender is DreamVC, we get the dream and add it to the tableView */
+		if let sourceViewController = sender.source as? DreamViewController {
+			let dream : Dream = sourceViewController.dream
+			
+			/* If the dream has just been upadted, we modify it and reload the rows */
+			if let selectedIndexPath = tableView.indexPathForSelectedRow {
+				dreams[(selectedIndexPath as NSIndexPath).row] = dream
+				tableView.reloadRows(at: [selectedIndexPath], with: .none)
+			}
+			/* If the dream is a new one, we just insert it to the rows */
+			else {
+				let newIndexPath = IndexPath(row: dreams.count, section: 0)
+				dreams.append(dream)
+				tableView.insertRows(at: [newIndexPath], with: .bottom)
+			}
+			
+			/* We save the modifications into the local storage */
+			//self.dreamsService.dreams = dreams
+			//self.dreamsService.saveDreams()
+		}
+	}
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+		if let dreamViewController = segue.destination as? DreamViewController {
+			print("PREPARE TO SEGUE")
+			dreamViewController.dream = Dream(title: "DREAMMMM", content: "wowoowowo", date: Date())
+			print(selectedDream.description)
+		}
     }
-    */
 
 }
