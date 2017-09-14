@@ -8,6 +8,7 @@
 
 import SwiftMessages
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 	var loginInput: Input?
@@ -16,6 +17,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 	var registerButton: UIButton?
 	var orLabel: UILabel?
     var form: Form!
+    var handle: AuthStateDidChangeListenerHandle?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            // ...
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +36,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.showRegisterButton()
         self.addSubmitEventHandler()
 	}
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
 	
     private func addSubmitEventHandler() {
         self.loginInput?.textField.delegate = self
@@ -40,19 +56,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     func handleSignIn(_ sender: UIButton) {
-        let login = self.loginInput?.textField.text
+        let email = self.loginInput?.textField.text
         let password = self.passwordInput?.textField.text
 
-        if ((login?.isEmpty)! || (password?.isEmpty)!) {
+        if ((email?.isEmpty)! || (password?.isEmpty)!) {
             ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error)
-            /*ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password")
-            ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error)
-            ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .info)
-            ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .warning)*/
-
+            return
         }
-        
-        print("Login: \(login) | Password: \(password)")
+        Auth.auth().signIn(withEmail: email!, password: password!) { (user, error) in
+            if error == nil {
+                ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
+            } else {
+                let errorMessage = error?.localizedDescription
+                ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
+            }
+        }
     }
     
 	func handleRegisterClick(_ sender: UIButton) {
