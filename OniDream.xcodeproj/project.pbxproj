@@ -42,6 +42,7 @@
 		60D9EB1D1F6464D50068969F /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB1C1F6464D50068969F /* Input.swift */; };
 		60D9EB1F1F6465040068969F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB1E1F6465040068969F /* Cell.swift */; };
 		A33AF98F86B9C0F1640F6F63 /* Pods_OniDreamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888A10BDB7AE8DF0D06DDF61 /* Pods_OniDreamUITests.framework */; };
+		C15E096F1F6AE867001780AF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15E096E1F6AE867001780AF /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		8A5352A4A4FA803E6A7FFEBC /* Pods-OniDream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDream.release.xcconfig"; path = "Pods/Target Support Files/Pods-OniDream/Pods-OniDream.release.xcconfig"; sourceTree = "<group>"; };
 		AE4BF0196340B2F59A32AA3D /* Pods-OniDreamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamTests/Pods-OniDreamTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6182FE19090C7E292288FD1 /* Pods-OniDreamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamUITests/Pods-OniDreamUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C15E096E1F6AE867001780AF /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DFEB90B3D392068A36B345C5 /* Pods-OniDreamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamTests/Pods-OniDreamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F640634461F2FC07BD80B5B0 /* Pods-OniDreamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamUITests/Pods-OniDreamUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,7 +178,7 @@
 			children = (
 				601EB4B81F6ADB270048CCF1 /* GoogleService-Info.plist */,
 				60D9EB091F64552D0068969F /* Helpers */,
-				60D9EB081F6455240068969F /* Stores */,
+				C15E096D1F6AE843001780AF /* Services */,
 				60D9EB071F64551D0068969F /* Controllers */,
 				60D9EB061F6455150068969F /* Views */,
 				60D9EB051F64550F0068969F /* Models */,
@@ -248,13 +250,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		60D9EB081F6455240068969F /* Stores */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Stores;
-			sourceTree = "<group>";
-		};
 		60D9EB091F64552D0068969F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +260,14 @@
 				601EB49F1F699C830048CCF1 /* UIApplicationExtension.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C15E096D1F6AE843001780AF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C15E096E1F6AE867001780AF /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		F067DAB0C7477BC00DE22E29 /* Pods */ = {
@@ -357,7 +360,7 @@
 				TargetAttributes = {
 					609E47381F644D37000EF712 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 9Q4H85X97E;
+						DevelopmentTeam = SZMUX4LUU5;
 						ProvisioningStyle = Automatic;
 					};
 					609E474E1F644D37000EF712 = {
@@ -453,7 +456,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		649E7068F214F0489E5F6D1D /* [CP] Embed Pods Frameworks */ = {
@@ -575,7 +578,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FF9A81EA149C065C1D80BF53 /* [CP] Check Pods Manifest.lock */ = {
@@ -593,7 +596,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -605,6 +608,7 @@
 			files = (
 				60D9EB191F64649D0068969F /* Modal.swift in Sources */,
 				60B1EA4A1F64692500F02240 /* UIViewExtension.swift in Sources */,
+				C15E096F1F6AE867001780AF /* UserService.swift in Sources */,
 				60D9EB151F6464690068969F /* Card.swift in Sources */,
 				60C3BCF81F6590A9000F2528 /* DreamTableViewCell.swift in Sources */,
 				60B1EA4C1F64698C00F02240 /* UILabelExtension.swift in Sources */,
@@ -781,10 +785,10 @@
 			baseConfigurationReference = 35BDEF1C4C9451D7B752B705 /* Pods-OniDream.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9Q4H85X97E;
+				DEVELOPMENT_TEAM = SZMUX4LUU5;
 				INFOPLIST_FILE = OniDream/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app.OniDream;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app.OniDreamMP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -795,10 +799,10 @@
 			baseConfigurationReference = 8A5352A4A4FA803E6A7FFEBC /* Pods-OniDream.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9Q4H85X97E;
+				DEVELOPMENT_TEAM = SZMUX4LUU5;
 				INFOPLIST_FILE = OniDream/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app.OniDream;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app.OniDreamMP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
