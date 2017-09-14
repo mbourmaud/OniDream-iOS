@@ -26,8 +26,22 @@ class LoginViewController: UIViewController {
         
 		self.showLoginForm()
         self.showRegisterButton()
+        self.addInputsEventHandlers()
 	}
 	
+    private func addInputsEventHandlers() {
+        self.loginInput?.textField.addTarget(self, action: #selector(loginInputChanged), for: .editingChanged)
+        self.passwordInput?.textField.addTarget(self, action: #selector(passwordInputChanged), for: .editingChanged)
+    }
+    
+    func loginInputChanged(_ sender: UITextField) {
+        print(sender.text)
+    }
+    
+    func passwordInputChanged(_ sender: UITextField) {
+        print(sender.text)
+    }
+    
 	func handleRegisterClick(_ sender: UIButton) {
 		self.navigationController?.pushViewController(RegisterViewController(), animated: true)
 	}
@@ -65,7 +79,7 @@ class LoginViewController: UIViewController {
 		self.loginInput = Input(label: "Login", placeholder: "Please enter your login")
 		self.passwordInput = Input(label: "Password", placeholder: "Please type in your password", isSecure: true)
 		self.loginButton = Button(label: "Sign in")
-		
+        
         self.form = Form(inputs: [
         loginInput!,
         passwordInput!,
@@ -79,7 +93,7 @@ class LoginViewController: UIViewController {
             make.height.equalTo(
                 Style.buttonHeight +
                     Style.inputHeight * CGFloat(form.inputs.count) +
-                    Style.margin * CGFloat(form.inputs.count)
+                    Style.margin * (CGFloat(form.inputs.count) + 2)
             )
             make.top.equalTo(self.view).offset(Style.topOffset)
         }
