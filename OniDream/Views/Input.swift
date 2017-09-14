@@ -57,14 +57,14 @@ class Input: UIView {
 	override func updateConstraints() {
 		
 		self.label.snp.makeConstraints { (make) -> Void in
-			make.height.equalTo(40)
+			make.height.equalTo(Style.inputHeight * 4/10)
 			make.top.equalTo(self)
 			make.left.equalTo(self)
 			make.right.equalTo(self)
 		}
 		
 		self.textField.snp.makeConstraints { (make) -> Void in
-			make.height.equalTo(50)
+			make.height.equalTo(Style.inputHeight * 6/10)
 			make.top.equalTo(self.label.snp.bottom)
 			make.left.equalTo(self)
 			make.right.equalTo(self)

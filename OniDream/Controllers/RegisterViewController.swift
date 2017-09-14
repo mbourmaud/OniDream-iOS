@@ -27,50 +27,23 @@ class RegisterViewController: UIViewController {
 		self.confirmPasswordInput = Input(label: "Confirm Password", placeholder: "Please confirm your password", isSecure: true)
 		self.registerButton = Button(label: "Sign up")
 		
-		self.view.addSubview(self.loginInput!)
-		self.view.addSubview(self.passwordInput!)
-		self.view.addSubview(self.confirmPasswordInput!)
-		self.view.addSubview(self.registerButton!)
-		
-		self.loginInput?.snp.makeConstraints { (make) -> Void in
-			make.left.equalTo(self.view).offset(Style.margin)
-			make.right.equalTo(self.view).offset(-Style.margin)
-			make.top.equalTo(self.view).offset(Style.margin*10)
-			make.height.equalTo(90)
-		}
-		
-		self.passwordInput?.snp.makeConstraints { (make) -> Void in
-			make.left.equalTo(self.view).offset(Style.margin)
-			make.right.equalTo(self.view).offset(-Style.margin)
-			make.top.equalTo((loginInput?.snp.bottom)!).offset(Style.margin)
-			make.height.equalTo(90)
-		}
-		
-		self.confirmPasswordInput?.snp.makeConstraints { (make) -> Void in
-			make.left.equalTo(self.view).offset(Style.margin)
-			make.right.equalTo(self.view).offset(-Style.margin)
-			make.top.equalTo((passwordInput?.snp.bottom)!).offset(Style.margin)
-			make.height.equalTo(90)
-		}
-		
-		self.registerButton?.snp.makeConstraints { (make) -> Void in
-			make.left.equalTo(self.view).offset(Style.margin)
-			make.right.equalTo(self.view).offset(-Style.margin)
-			make.top.equalTo((confirmPasswordInput?.snp.bottom)!).offset(Style.margin * 2)
-			make.height.equalTo(50)
-		}
+        let form: Form = Form(inputs: [
+            self.loginInput!,
+            self.passwordInput!,
+            self.confirmPasswordInput!,
+        ], submitButton: self.registerButton!)
+        
+        self.view.addSubview(form)
+        
+        form.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(self.view)
+            make.right.equalTo(self.view)
+            make.height.equalTo(
+                Style.buttonHeight +
+                Style.inputHeight * CGFloat(form.inputs.count) +
+                Style.margin * CGFloat(form.inputs.count)
+            )
+            make.top.equalTo(self.view).offset(Style.topOffset)
+        }
 	}
-
-	
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -31,7 +31,7 @@ class Button: UIButton {
 	private func styleButton() {
 		self.setTitle(self.label.uppercased(), for: .normal)
 		self.setTitleColor(self.textColor, for: .normal)
-		self.titleLabel?.font = Style.titleFont
+		self.titleLabel?.font = Style.buttonFont
 		self.layer.cornerRadius = Style.radius
 		self.layer.borderWidth = 2.0
 		self.layer.borderColor = self.borderColor.cgColor

@@ -63,9 +63,11 @@ internal struct Style {
 	// MARK: Miscs
 	internal static let radius: CGFloat = 8
 	internal static let margin: CGFloat = 10
+    internal static let topOffset: CGFloat = UIScreen.main.bounds.height / 10
 	
 	// MARK: Font
 	internal static let titleFont: UIFont = UIFont.systemFont(ofSize: 19)
+    internal static let buttonFont: UIFont = UIFont.boldSystemFont(ofSize: 20)
 	internal static let textFont: UIFont = UIFont.systemFont(ofSize: 18)
 	internal static let placeholderFont: UIFont = UIFont.italicSystemFont(ofSize: Style.textFont.pointSize)
 	internal static let navigationFont: UIFont = UIFont.boldSystemFont(ofSize: 22)
@@ -73,4 +75,6 @@ internal struct Style {
 	
 	// MARK: Icon Sizes
 	internal static let tabBarIconSize: CGFloat = 40
+    internal static let inputHeight: CGFloat = 90
+    internal static let buttonHeight: CGFloat = 50
 }
