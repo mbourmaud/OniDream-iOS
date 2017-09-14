@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OniDream/Controllers/SettingsTableViewController.swift"
+            timestampString = "527033694.12375"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "SettingsTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OniDream.SettingsTableViewController.numberOfRowsForSection.getter : Swift.Dictionary&lt;Swift.Int, Swift.Int&gt;"
+                  moduleName = "OniDream"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mathieubourmaud/Documents/Dev/OniDream/iOS/OniDream/Controllers/SettingsTableViewController.swift"
+                  timestampString = "527033918.448344"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OniDream.SettingsTableViewController.numberOfRowsForSection.setter : Swift.Dictionary&lt;Swift.Int, Swift.Int&gt;"
+                  moduleName = "OniDream"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mathieubourmaud/Documents/Dev/OniDream/iOS/OniDream/Controllers/SettingsTableViewController.swift"
+                  timestampString = "527033918.449962"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OniDream.SettingsTableViewController.init (style : __C.UITableViewStyle) -&gt; OniDream.SettingsTableViewController"
+                  moduleName = "OniDream"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mathieubourmaud/Documents/Dev/OniDream/iOS/OniDream/Controllers/SettingsTableViewController.swift"
+                  timestampString = "527033918.451612"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OniDream.SettingsTableViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; OniDream.SettingsTableViewController"
+                  moduleName = "OniDream"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mathieubourmaud/Documents/Dev/OniDream/iOS/OniDream/Controllers/SettingsTableViewController.swift"
+                  timestampString = "527033918.453324"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OniDream.SettingsTableViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;OniDream.SettingsTableViewController&gt;"
+                  moduleName = "OniDream"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mathieubourmaud/Documents/Dev/OniDream/iOS/OniDream/Controllers/SettingsTableViewController.swift"
+                  timestampString = "527033918.45493"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
