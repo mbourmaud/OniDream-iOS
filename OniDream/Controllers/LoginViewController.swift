@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UITabBarController {
+class LoginViewController: UIViewController {
 
 	let loginTextField: UITextField = UITextField()
 	let passwordTextField: UITextField = UITextField()
@@ -21,8 +21,13 @@ class LoginViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		self.view.setViewBackgroundGradient(sender: self, Color.purple, Color.blue)
+        self.view = View(frame: self.view.frame)
+        
 		self.showLoginForm()
+	}
+	
+	func handleRegisterClick(_ sender: UIButton) {
+		self.navigationController?.pushViewController(RegisterViewController(), animated: true)
 	}
 	
 	private func showLoginForm() {
@@ -39,6 +44,8 @@ class LoginViewController: UITabBarController {
 		self.view.addSubview(self.orLabel!)
 		self.view.addSubview(self.registerButton!)
 		
+		self.registerButton?.addTarget(self, action:#selector(handleRegisterClick), for: .touchUpInside)
+		
 		self.orLabel?.textColor = Color.white
 		self.orLabel?.font = Style.titleFont
 		self.orLabel?.textAlignment = NSTextAlignment.center
@@ -46,21 +53,21 @@ class LoginViewController: UITabBarController {
 		self.loginCard?.snp.makeConstraints { (make) -> Void in
 			make.left.equalTo(self.view).offset(Style.margin)
 			make.right.equalTo(self.view).offset(-Style.margin)
-			make.top.equalTo(self.view).offset(Style.margin)
-			make.height.equalTo(80)
+			make.top.equalTo(self.view).offset(Style.margin * 10)
+			make.height.equalTo(90)
 		}
 		
 		self.passwordCard?.snp.makeConstraints { (make) -> Void in
 			make.left.equalTo(self.view).offset(Style.margin)
 			make.right.equalTo(self.view).offset(-Style.margin)
 			make.top.equalTo((loginCard?.snp.bottom)!).offset(Style.margin)
-			make.height.equalTo(100)
+			make.height.equalTo(90)
 		}
 		
 		self.loginButton?.snp.makeConstraints { (make) -> Void in
 			make.left.equalTo(self.view).offset(Style.margin)
 			make.right.equalTo(self.view).offset(-Style.margin)
-			make.top.equalTo((passwordCard?.snp.bottom)!).offset(Style.margin)
+			make.top.equalTo((passwordCard?.snp.bottom)!).offset(Style.margin * 2)
 			make.height.equalTo(50)
 		}
 		
@@ -78,14 +85,7 @@ class LoginViewController: UITabBarController {
 			make.height.equalTo(50)
 		}
 	}
-	
-	private func showDivider() {
-		
-	}
-	
-	private func showRegistrationForm() {
-		
-	}
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

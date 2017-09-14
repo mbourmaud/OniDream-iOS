@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4D54DFC1F44EC03713B9A36A /* Pods_OniDream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2586AED138720FD4CFAFCB5E /* Pods_OniDream.framework */; };
 		54A6CBE2584E07F69D2AEC52 /* Pods_OniDreamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E256012D17017C5886C6FD2 /* Pods_OniDreamTests.framework */; };
+		601EB4A01F699C830048CCF1 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EB49F1F699C830048CCF1 /* UIApplicationExtension.swift */; };
+		601EB4A21F69C5DC0048CCF1 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EB4A11F69C5DC0048CCF1 /* View.swift */; };
+		601EB4A41F69C78A0048CCF1 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EB4A31F69C78A0048CCF1 /* TableView.swift */; };
+		601EB4A61F69CB9F0048CCF1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EB4A51F69CB9F0048CCF1 /* SettingsTableViewController.swift */; };
 		6042591D1F68472C0091B1CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6042591C1F68472C0091B1CD /* LoginViewController.swift */; };
 		604259211F6879480091B1CD /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604259201F6879480091B1CD /* TextField.swift */; };
 		604259231F6881AE0091B1CD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604259221F6881AE0091B1CD /* Button.swift */; };
@@ -58,6 +62,10 @@
 		2586AED138720FD4CFAFCB5E /* Pods_OniDream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OniDream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E256012D17017C5886C6FD2 /* Pods_OniDreamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OniDreamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BDEF1C4C9451D7B752B705 /* Pods-OniDream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OniDream/Pods-OniDream.debug.xcconfig"; sourceTree = "<group>"; };
+		601EB49F1F699C830048CCF1 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		601EB4A11F69C5DC0048CCF1 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		601EB4A31F69C78A0048CCF1 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		601EB4A51F69CB9F0048CCF1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6042591C1F68472C0091B1CD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		604259201F6879480091B1CD /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		604259221F6881AE0091B1CD /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -211,6 +219,8 @@
 				60C3BCF71F6590A9000F2528 /* DreamTableViewCell.swift */,
 				604259201F6879480091B1CD /* TextField.swift */,
 				604259221F6881AE0091B1CD /* Button.swift */,
+				601EB4A11F69C5DC0048CCF1 /* View.swift */,
+				601EB4A31F69C78A0048CCF1 /* TableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +234,7 @@
 				60C3BCFD1F659A42000F2528 /* TabBarViewController.swift */,
 				6042591C1F68472C0091B1CD /* LoginViewController.swift */,
 				604259241F6889320091B1CD /* RegisterViewController.swift */,
+				601EB4A51F69CB9F0048CCF1 /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -242,6 +253,7 @@
 				60B1EA4B1F64698C00F02240 /* UILabelExtension.swift */,
 				60C3BCFF1F659B3C000F2528 /* UIImageExtension.swift */,
 				605273C71F65F0BA001C9908 /* UITableViewExtension.swift */,
+				601EB49F1F699C830048CCF1 /* UIApplicationExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -593,7 +605,9 @@
 				6042591D1F68472C0091B1CD /* LoginViewController.swift in Sources */,
 				60C3BCF41F654539000F2528 /* StatisticsViewController.swift in Sources */,
 				60D9EB1D1F6464D50068969F /* Input.swift in Sources */,
+				601EB4A01F699C830048CCF1 /* UIApplicationExtension.swift in Sources */,
 				605273C81F65F0BA001C9908 /* UITableViewExtension.swift in Sources */,
+				601EB4A41F69C78A0048CCF1 /* TableView.swift in Sources */,
 				604259251F6889320091B1CD /* RegisterViewController.swift in Sources */,
 				60D9EB0D1F6461C10068969F /* Dream.swift in Sources */,
 				60D9EB1F1F6465040068969F /* Cell.swift in Sources */,
@@ -601,7 +615,9 @@
 				60C3BCFC1F65985C000F2528 /* DreamViewController.swift in Sources */,
 				60C3BCFE1F659A42000F2528 /* TabBarViewController.swift in Sources */,
 				604259211F6879480091B1CD /* TextField.swift in Sources */,
+				601EB4A61F69CB9F0048CCF1 /* SettingsTableViewController.swift in Sources */,
 				60C3BCFA1F6590BA000F2528 /* DreamsTableViewController.swift in Sources */,
+				601EB4A21F69C5DC0048CCF1 /* View.swift in Sources */,
 				60C3BD001F659B3C000F2528 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

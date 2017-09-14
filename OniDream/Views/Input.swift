@@ -36,10 +36,12 @@ class Input: UIView {
 	}
 	
 	private func styleTextField() {
-		self.textField.backgroundColor = Color.white30
+		self.textField.backgroundColor = Color.white50
 		self.textField.layer.cornerRadius = Style.radius
 		self.textField.font = Style.textFont
-		self.textField.attributedPlaceholder = NSAttributedString(string: self.placeholder, attributes: [NSFontAttributeName: Style.placeholderFont])
+        self.textField.attributedPlaceholder = NSAttributedString(string: self.placeholder,
+                                                                  attributes: [NSFontAttributeName: Style.placeholderFont,
+                                                                               NSForegroundColorAttributeName: Color.placeholderColor])
 		self.textField.isSecureTextEntry = self.isSecure
 	}
 	
@@ -55,7 +57,7 @@ class Input: UIView {
 	override func updateConstraints() {
 		
 		self.label.snp.makeConstraints { (make) -> Void in
-			make.height.equalTo(30)
+			make.height.equalTo(40)
 			make.top.equalTo(self)
 			make.left.equalTo(self)
 			make.right.equalTo(self)

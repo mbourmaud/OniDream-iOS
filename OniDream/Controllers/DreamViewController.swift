@@ -18,11 +18,12 @@ class DreamViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view = View(frame: self.view.frame)
+        
         // Do any additional setup after loading the view.
 		self.drawNavigationBar()
 		self.buildLayout()
-		self.view.setViewBackgroundGradient(sender: self, Color.purple, Color.blue)
-		self.styleContentTextField()
+        self.styleContentTextField()
 		self.styleTitleTextField()
 		
 		titleTextField.addTarget(self, action: #selector(self.titleChanged(sender:)), for: .editingChanged)
@@ -41,7 +42,7 @@ class DreamViewController: UIViewController, UITextViewDelegate {
 		dreamTitleCard.snp.makeConstraints { (make) -> Void in
 			make.left.equalTo(self.view).offset(Style.margin)
 			make.right.equalTo(self.view).offset(-Style.margin)
-			make.top.equalTo(self.view).offset(Style.margin)
+			make.top.equalTo(self.view).offset(Style.margin*10)
 			make.height.equalTo(100)
 		}
 		

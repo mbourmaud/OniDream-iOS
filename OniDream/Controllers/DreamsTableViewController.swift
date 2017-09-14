@@ -15,10 +15,19 @@ class DreamsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		self.tableView.setTableViewBackgroundGradient(sender: self, Color.purple, Color.blue)
+        self.tableView.backgroundView = View(frame: self.tableView.bounds)
 		self.tableView.separatorStyle = .none
-
+        
+        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 0, 0)
+        
 		self.drawNavigationBar()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if let rect = self.navigationController?.navigationBar.frame {
+            let y = rect.size.height + rect.origin.y
+            self.tableView.contentInset = UIEdgeInsetsMake( y, 0, 0, 0)
+        }
     }
 	
 	private func drawNavigationBar() {		

@@ -54,7 +54,7 @@ internal struct Color {
 	// MARK: Text Colors
 	internal static let titleColor = UIColor.black.alpha(0.6)
 	internal static let textColor = UIColor.black.alpha(0.8)
-	internal static let placeholderColor = UIColor.black.alpha(0.4)
+	internal static let placeholderColor = UIColor.black.alpha(0.6)
 }
 
 

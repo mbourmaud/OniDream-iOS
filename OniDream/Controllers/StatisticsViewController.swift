@@ -14,14 +14,16 @@ import PieCharts
 class StatisticsViewController: UIViewController {
 	
 	var scrollView: UIScrollView!
-
+    var blurEffectView: UIVisualEffectView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+        
+        self.view.addSubview(View(frame: self.view.frame))
+        self.edgesForExtendedLayout = []
+        
 		self.buildLayout()
-		
-		self.view.setViewBackgroundGradient(sender: self, Color.purple, Color.blue)
-		
+				
 		//self.title = "Statistics"
     }
 
@@ -32,6 +34,7 @@ class StatisticsViewController: UIViewController {
 		
 		// Creating the Scroll View
 		self.scrollView = UIScrollView(frame: self.view.bounds)
+        
 		self.scrollView.autoresizingMask = UIViewAutoresizing.flexibleHeight
 		self.view.addSubview(scrollView)
 		self.scrollView.addSubview(barCard)

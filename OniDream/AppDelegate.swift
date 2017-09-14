@@ -25,21 +25,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func setTabBarAppearance() {
 		UITabBar.appearance().tintColor = Color.white
 		UITabBar.appearance().unselectedItemTintColor = Color.white
-		UITabBar.appearance().backgroundColor = Color.blue
+		UITabBar.appearance().backgroundColor = Color.white30.alpha(0.05)
 		UITabBar.appearance().shadowImage = UIImage()
 		UITabBar.appearance().backgroundImage = UIImage()
-		UITabBar.appearance().barTintColor = Color.blue
+		UITabBar.appearance().barTintColor = Color.white
 	}
 	
 	/* Navigation Bar style */
 	func setNavigationBarAppearance(app: UIApplication) {
-		app.statusBarStyle = .lightContent
+        
+        UIApplication.shared.statusBarView?.backgroundColor = Color.white30.alpha(0.05)
+        
+		UIApplication.shared.statusBarStyle = .lightContent
 		UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
 		UINavigationBar.appearance().shadowImage = UIImage()
-		UINavigationBar.appearance().backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-		UINavigationBar.appearance().isTranslucent = false
-		UINavigationBar.appearance().barTintColor = Color.purple
-		UINavigationBar.appearance().tintColor = Color.white
+		UINavigationBar.appearance().isTranslucent = true
+		UINavigationBar.appearance().barTintColor = Color.white
+        UINavigationBar.appearance().tintColor = Color.white
+		UINavigationBar.appearance().backgroundColor = Color.white30.alpha(0.05)
 		UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: Color.white,
 		                                                    NSFontAttributeName: Style.navigationFont]
 	}
