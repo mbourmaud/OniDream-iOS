@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Hue.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,11 +30,6 @@
 			<false/>
 		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>PieCharts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -74,11 +74,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftCharts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SwiftIcons-SwiftIcons.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -107,7 +102,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>385F74ECF6E143740DB95271DD56557C</key>
+		<key>00103D6C821BE85971C563025527BA5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>07C9917FC8D5846A59750CCA01A32334</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>258441E4AF0CFBA54F0EEBBDB1EFA12D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2F5E3C6D62738426C8AFCECF5ED4407A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>31A74545ACA13B01021EC124FA4F3D29</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3366A65F76A585B1840FDBF96DCA7B6B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,22 +142,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>472246C19FF66E3EEEC8566F302C36D0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5BE26E551C6E75B5823D56DF4A0046AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5E4B9D023702B55BE61C5C148DF100EA</key>
+		<key>72B9F276013D387F6EA62500AC58C454</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85127E74201450240519D32E4196008D</key>
+		<key>88957FF57E81BBF12CC8E6E1C04E03D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,17 +162,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8D02FC08FB2AF916D11480889CC27E4A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A05EC4F778F9740C8ADB35197869F1E9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A9EC61D104D30AA83A114F05D8ED2905</key>
+		<key>8DADEA7C4A973C146EE06AA5F6C525A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,12 +172,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDCDA5E5470F052AAE1C2356B669C840</key>
+		<key>BFE86AFACB36FD4109EFFCC20CBA3E81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D07A1EAB8A38B458509E4274232533A8</key>
+		<key>CDCDA5E5470F052AAE1C2356B669C840</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,22 +192,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EFD20C8E4B7D8BB8DD79D14DAD7FB08F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F116AD98A2BDF8453CF746D9DA4806ED</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F98A2C1E075F19B746C9056971B06FE1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FAD77F184B2D266253644021D364D2FB</key>
+		<key>EF82D4952D1C056EB56D96E4BCF118EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

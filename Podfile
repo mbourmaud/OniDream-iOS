@@ -13,13 +13,12 @@ target 'OniDream' do
   pod 'SwiftyJSON'
   pod 'KeychainSwift', '~> 8.0'
   pod 'RealmSwift'
-  pod 'SwiftCharts', '~> 0.6'
   pod 'Hue', '~> 2.0'
   pod 'NVActivityIndicatorView'
   pod 'SwiftIcons'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   pod 'SwiftMessages'
-  pod 'PieCharts'
+  pod 'Firebase/Core'
 
   target 'OniDreamTests' do
     inherit! :search_paths

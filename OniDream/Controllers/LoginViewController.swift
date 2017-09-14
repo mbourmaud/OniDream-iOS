@@ -6,12 +6,10 @@
 //  Copyright © 2017 Mathieu Bourmaud. All rights reserved.
 //
 
+import SwiftMessages
 import UIKit
 
-class LoginViewController: UIViewController {
-
-	let loginTextField: UITextField = UITextField()
-	let passwordTextField: UITextField = UITextField()
+class LoginViewController: UIViewController, UITextFieldDelegate {
 	var loginInput: Input?
 	var passwordInput: Input?
 	var loginButton: UIButton?
@@ -26,25 +24,48 @@ class LoginViewController: UIViewController {
         
 		self.showLoginForm()
         self.showRegisterButton()
-        self.addInputsEventHandlers()
+        self.addSubmitEventHandler()
 	}
 	
-    private func addInputsEventHandlers() {
-        self.loginInput?.textField.addTarget(self, action: #selector(loginInputChanged), for: .editingChanged)
-        self.passwordInput?.textField.addTarget(self, action: #selector(passwordInputChanged), for: .editingChanged)
+    private func addSubmitEventHandler() {
+        self.loginInput?.textField.delegate = self
+        self.passwordInput?.textField.delegate = self
+        self.loginButton?.addTarget(self, action:#selector(handleSignIn), for: .touchUpInside)
     }
     
-    func loginInputChanged(_ sender: UITextField) {
-        print(sender.text)
+    /* Pressing the return key will dismiss the Keyboard */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
-    
-    func passwordInputChanged(_ sender: UITextField) {
-        print(sender.text)
+
+    func handleSignIn(_ sender: UIButton) {
+        let login = self.loginInput?.textField.text
+        let password = self.passwordInput?.textField.text
+
+        if ((login?.isEmpty)! || (password?.isEmpty)!) {
+            ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error)
+            /*ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password")
+            ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error)
+            ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .info)
+            ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .warning)*/
+
+        }
+        
+        print("Login: \(login) | Password: \(password)")
     }
     
 	func handleRegisterClick(_ sender: UIButton) {
 		self.navigationController?.pushViewController(RegisterViewController(), animated: true)
 	}
+    
+    /*private func showErrorMessage(title:String, message: String) {
+        let error = MessageView.viewFromNib(layout: .CardView)
+        error.configureTheme(.error)
+        error.configureContent(title: title, body: message)
+
+        SwiftMessages.show(view: error)
+    }*/
     
     private func showRegisterButton() {
         self.registerButton = Button(label: "Sign up", borderColor: Color.purple, textColor: Color.white, backColor: Color.purple)

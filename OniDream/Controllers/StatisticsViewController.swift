@@ -8,8 +8,6 @@
 
 import UIKit
 import SnapKit
-import SwiftCharts
-import PieCharts
 
 class StatisticsViewController: UIViewController {
 	

@@ -29,7 +29,7 @@
             <objects>
                 <navigationController storyboardIdentifier="profileNavigationController" id="d5j-AV-kpO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="4vA-Sd-y6Z"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e9q-qM-E2w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e9q-qM-E2w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
