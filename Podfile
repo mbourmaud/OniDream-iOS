@@ -20,6 +20,7 @@ target 'OniDream' do
   pod 'SwiftMessages'
   pod 'Firebase/Core'
   pod 'SwiftGifOrigin', '~> 1.6.1'
+  pod 'Firebase/Auth’
 
   target 'OniDreamTests' do
     inherit! :search_paths

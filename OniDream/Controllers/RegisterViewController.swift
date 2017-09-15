@@ -7,19 +7,66 @@
 //
 
 import UIKit
+import Firebase
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 	var loginInput: Input?
 	var passwordInput: Input?
 	var confirmPasswordInput: Input?
 	var registerButton: UIButton?
-	
+    var handle: AuthStateDidChangeListenerHandle?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            // ...
+        }
+    }
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
         self.view = View(frame: self.view.frame)
 		self.showRegisterForm()
+        self.addSubmitEventHandler()
 	}
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    
+    private func addSubmitEventHandler() {
+        self.loginInput?.textField.delegate = self
+        self.passwordInput?.textField.delegate = self
+        self.confirmPasswordInput?.textField.delegate = self
+        self.registerButton?.addTarget(self, action:#selector(handleSignUp), for: .touchUpInside)
+    }
+    
+    func handleSignUp(_ sender: UIButton) {
+        let email = self.loginInput?.textField.text
+        let password = self.passwordInput?.textField.text
+        let confirmPassword = self.confirmPasswordInput?.textField.text
+        
+        if ((email?.isEmpty)! || (password?.isEmpty)! || (confirmPassword?.isEmpty)!) {
+            ModalController.shared.showModal(title: "Error", message: "Please fill each field", type: .error)
+            return
+        }
+        if (password != confirmPassword) {
+            ModalController.shared.showModal(title: "Error", message: "Passwords are different", type: .error)
+            return
+        }
+        Auth.auth().createUser(withEmail: email!, password: password!) { (user, error) in
+            if error == nil {
+                ModalController.shared.showModal(title: "Success", message: "You are now signed up", type: .success)
+            } else {
+                let errorMessage = error?.localizedDescription
+                ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
+            }
+        }
+    }
 	
 	private func showRegisterForm() {
 		self.loginInput = Input(label: "Login", placeholder: "Please enter a login")

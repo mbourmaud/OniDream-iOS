@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (4.4.0)
   - DateToolsSwift (2.0.3)
+  - Firebase/Auth (4.0.0):
+    - Firebase/Core
+    - FirebaseAuth (= 4.0.0)
   - Firebase/Core (4.0.0):
     - FirebaseAnalytics (= 4.0.0)
     - FirebaseCore (= 4.0.0)
@@ -8,13 +11,25 @@ PODS:
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseAuth (4.0.0):
+    - FirebaseAnalytics (~> 4.0)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.0):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (2.0.0):
     - FirebaseCore (~> 4.0)
+  - GoogleToolboxForMac/DebugUtils (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMSessionFetcher/Core (1.1.11)
   - Hue (2.0.1)
   - KeychainSwift (8.0.2)
   - NVActivityIndicatorView (3.6.1)
@@ -34,6 +49,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - DateToolsSwift
+  - Firebase/Auth
   - Firebase/Core
   - Hue (~> 2.0)
   - KeychainSwift (~> 8.0)
@@ -62,9 +78,11 @@ SPEC CHECKSUMS:
   DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
   Firebase: 284eea779b73fdff309791817da7c68bff8dd572
   FirebaseAnalytics: 6f08e746f7d66f5452931bc2e822b5df9c66b64a
+  FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
   FirebaseCore: 85ad466044c2f013cdb167f85d426d15b128114a
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
   KeychainSwift: 213db04dfe7244988e61f77c72a2afb2f775954a
   NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
@@ -78,6 +96,6 @@ SPEC CHECKSUMS:
   SwiftMessages: ea0184c801030e52674c603896812c392c129248
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 000417348dd2a6a263a82b83106ac3f7ff174130
+PODFILE CHECKSUM: f1ddc84982b8fe0ea2573bbe9bc7e432e513186c
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.1.1
