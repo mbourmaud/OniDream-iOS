@@ -8,9 +8,8 @@
 
 import UIKit
 import SnapKit
-import Spring
 
-class Card: SpringView {
+class Card: UIView {
 	// MARK: The header of the card (with a title and a second label)
 	let header: CardHeader
 	// MARK: The content that's a subview of the main

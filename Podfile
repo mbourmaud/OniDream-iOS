@@ -9,18 +9,15 @@ target 'OniDream' do
   pod 'Alamofire'
   pod 'DateToolsSwift'
   pod 'SnapKit', '~> 3.0'
-  pod 'PinLayout'
   pod 'SwiftyJSON'
   pod 'KeychainSwift', '~> 8.0'
   pod 'RealmSwift'
   pod 'Hue', '~> 2.0'
-  pod 'NVActivityIndicatorView'
   pod 'SwiftIcons'
-  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   pod 'SwiftMessages'
   pod 'Firebase/Core'
   pod 'SwiftGifOrigin', '~> 1.6.1'
-  pod 'Firebase/Auth’
+  pod 'Firebase/Auth'
 
   target 'OniDreamTests' do
     inherit! :search_paths
