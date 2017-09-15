@@ -39,8 +39,8 @@ final class UserService {
 //        }
 //        return auth
 //    }
-    public func login(email: String, password: String, auth: Auth, completion: AuthResultCallback? = nil) {
-        auth.signIn(withEmail: email, password: password)
+    public func login(email: String, password: String, auth: Auth, completion: AuthResultCallback?) {
+		auth.signIn(withEmail: email, password: password, completion: completion)
     }
     
     public func setCurrentUser(auth: Auth) -> User {

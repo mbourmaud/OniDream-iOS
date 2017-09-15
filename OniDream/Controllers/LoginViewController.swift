@@ -65,26 +65,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error)
             return
         }
-        UserService.shared.login(email: email!, password: password!, auth: auth)! { (user, error) in
-                        if error == nil {
-                            ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
-                        } else {
-                            let errorMessage = error?.localizedDescription
-                            ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
-                            return
-                        }
-            
-// Version qui marche mais qui fait le signin dans le VC
-//        auth.signIn(withEmail: email!, password: password!) { (user, error) in
-//            if error == nil {
-//                ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
-//            } else {
-//                let errorMessage = error?.localizedDescription
-//                ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
-//                return
-//            }
-//        }
-        currentUser = UserService.shared.setCurrentUser(auth: auth)
+		
+        UserService.shared.login(email: email!, password: password!, auth: auth, completion: { (user, error) in
+			if error == nil {
+				ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
+			} else {
+				let errorMessage = error?.localizedDescription
+				ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
+				return
+			}
+		})
+		
+        //currentUser = UserService.shared.setCurrentUser(auth: auth)
         print("ÇA MARCHE !!!")
         print(currentUser?.email) // DEBUG
         print(currentUser?.fireUid) // DEBUG
