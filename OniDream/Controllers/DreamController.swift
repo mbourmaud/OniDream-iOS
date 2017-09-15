@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DreamViewController: UIViewController, UITextViewDelegate {
+class DreamController: UIViewController, UITextViewDelegate {
 	var dream: Dream!
 	var contentTextField: UITextView = UITextView()
 	var titleTextField: UITextField = UITextField()

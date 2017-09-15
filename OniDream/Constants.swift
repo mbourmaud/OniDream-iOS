@@ -17,6 +17,7 @@ internal struct	APIConfig {
 internal struct Identifier {
 	// MARK: Cells Identifiers
 	internal static let dreamTableViewCell = "dreamTableViewCell"
+	internal static let peripheralCell = "peripheralCell"
 	
 	// MARK: Segues Identifiers
 	internal static let unwindToDreams = "unwindToDreams"
@@ -61,7 +62,7 @@ internal struct Color {
 // MARK: General OniDream Styling
 internal struct Style {
 	// MARK: Miscs
-	internal static let radius: CGFloat = 8
+	internal static let radius: CGFloat = 4
 	internal static let margin: CGFloat = 10
     internal static let topOffset: CGFloat = UIScreen.main.bounds.height / 10
 	
