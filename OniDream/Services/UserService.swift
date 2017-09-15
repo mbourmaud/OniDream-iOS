@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class UserService {
+final class UserService {
     
     // Can't init is singleton
     private init() { }
@@ -17,14 +17,22 @@ class UserService {
     // MARK: Shared Instance
     
     static let shared = UserService()
+
+    public func login(email: String, password: String, auth: Auth, completion: AuthResultCallback?) {
+		auth.signIn(withEmail: email, password: password, completion: completion)
+    }
     
-    public func login(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if error == nil {
-                ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
-            } else {
-                ModalController.shared.showModal(title: "Error", message: "Invalid login or password", type: .error)
-            }
-        }
+    public func signup(email: String, password: String, auth: Auth, completion: AuthResultCallback?) {
+        auth.createUser(withEmail: email, password: password, completion: completion)
+    }
+    
+    public func setCurrentUser(auth: Auth) -> User {
+        let currentUser: User
+        let fireUser = auth.currentUser
+        
+        currentUser = User()
+        currentUser.fireUid = fireUser!.uid
+        currentUser.email = fireUser!.email!
+        return currentUser
     }
 }

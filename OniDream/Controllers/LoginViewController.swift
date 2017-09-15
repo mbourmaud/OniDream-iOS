@@ -18,6 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 	var orLabel: UILabel?
     var form: Form!
     var handle: AuthStateDidChangeListenerHandle?
+    var currentUser: User?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,14 +64,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error)
             return
         }
-        Auth.auth().signIn(withEmail: email!, password: password!) { (user, error) in
-            if error == nil {
-                ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
-            } else {
-                let errorMessage = error?.localizedDescription
-                ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
-            }
-        }
+		
+        UserService.shared.login(email: email!, password: password!, auth: Auth.auth(), completion: { (user, error) in
+			if error == nil {
+				ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
+                let currentUser = UserService.shared.setCurrentUser(auth: Auth.auth())
+                print(currentUser.email) // DEBUG
+                print(currentUser.fireUid) // DEBUG
+			} else {
+				let errorMessage = error?.localizedDescription
+				ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
+			}
+		})
     }
     
 	func handleRegisterClick(_ sender: UIButton) {
