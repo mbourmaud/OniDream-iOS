@@ -18,6 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 	var orLabel: UILabel?
     var form: Form!
     var handle: AuthStateDidChangeListenerHandle?
+    var currentUser: User?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,19 +59,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func handleSignIn(_ sender: UIButton) {
         let email = self.loginInput?.textField.text
         let password = self.passwordInput?.textField.text
+        var auth = Auth.auth()
 
         if ((email?.isEmpty)! || (password?.isEmpty)!) {
             ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error)
             return
         }
-        Auth.auth().signIn(withEmail: email!, password: password!) { (user, error) in
-            if error == nil {
-                ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
-            } else {
-                let errorMessage = error?.localizedDescription
-                ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
-            }
-        }
+        UserService.shared.login(email: email!, password: password!, auth: auth)! { (user, error) in
+                        if error == nil {
+                            ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
+                        } else {
+                            let errorMessage = error?.localizedDescription
+                            ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
+                            return
+                        }
+            
+// Version qui marche mais qui fait le signin dans le VC
+//        auth.signIn(withEmail: email!, password: password!) { (user, error) in
+//            if error == nil {
+//                ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
+//            } else {
+//                let errorMessage = error?.localizedDescription
+//                ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
+//                return
+//            }
+//        }
+        currentUser = UserService.shared.setCurrentUser(auth: auth)
+        print("ÇA MARCHE !!!")
+        print(currentUser?.email) // DEBUG
+        print(currentUser?.fireUid) // DEBUG
     }
     
 	func handleRegisterClick(_ sender: UIButton) {
