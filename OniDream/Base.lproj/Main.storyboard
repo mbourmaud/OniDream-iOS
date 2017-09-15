@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="TabBarViewController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBarController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -72,13 +73,16 @@
                         <sections>
                             <tableViewSection id="kcj-mw-RfO">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gDI-M3-e75">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gDI-M3-e75">
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gDI-M3-e75" id="ObH-qF-NQ0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="IXc-Xm-GP9" kind="show" id="5IN-Rn-oih"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -173,6 +177,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSs-us-AHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2062" y="699"/>
+        </scene>
+        <!--Peripherals Controller-->
+        <scene sceneID="cL6-b5-n9R">
+            <objects>
+                <tableViewController id="IXc-Xm-GP9" customClass="PeripheralsController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FSL-KQ-kau">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="peripheralCell" id="CSQ-L2-Etz">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CSQ-L2-Etz" id="93e-Ta-SSs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9U-1V-SF9">
+                                            <rect key="frame" x="15" y="0.0" width="220" height="43"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6K-yg-Uia">
+                                            <rect key="frame" x="243" y="0.0" width="124" height="43"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="124" id="ee3-BT-0Vd"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="p9U-1V-SF9" firstAttribute="centerY" secondItem="I6K-yg-Uia" secondAttribute="centerY" id="6K7-m3-Tjd"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="p9U-1V-SF9" secondAttribute="bottom" constant="-8" id="BRa-JE-ZTE"/>
+                                        <constraint firstItem="I6K-yg-Uia" firstAttribute="leading" secondItem="p9U-1V-SF9" secondAttribute="trailing" constant="8" id="OpS-LO-KCQ"/>
+                                        <constraint firstItem="I6K-yg-Uia" firstAttribute="trailing" secondItem="93e-Ta-SSs" secondAttribute="trailingMargin" id="YZQ-bC-g4j"/>
+                                        <constraint firstItem="p9U-1V-SF9" firstAttribute="leading" secondItem="93e-Ta-SSs" secondAttribute="leadingMargin" constant="7" id="Z4M-d2-4GG"/>
+                                        <constraint firstItem="p9U-1V-SF9" firstAttribute="top" secondItem="93e-Ta-SSs" secondAttribute="topMargin" constant="-8" id="ekN-JW-iEc"/>
+                                        <constraint firstItem="p9U-1V-SF9" firstAttribute="height" secondItem="I6K-yg-Uia" secondAttribute="height" id="g58-Mi-EBU"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IXc-Xm-GP9" id="BeL-B5-Bsy"/>
+                            <outlet property="delegate" destination="IXc-Xm-GP9" id="BaL-sU-BHr"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R68-zd-jpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2062" y="1441"/>
         </scene>
         <!--Item-->
         <scene sceneID="B75-di-qgv">
