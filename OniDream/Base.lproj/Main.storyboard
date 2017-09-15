@@ -44,7 +44,7 @@
         <!--Profile-->
         <scene sceneID="nj4-in-Hi7">
             <objects>
-                <viewController id="DPL-SI-fxB" customClass="LoginViewController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DPL-SI-fxB" customClass="LoginController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0JF-BO-VUH"/>
                         <viewControllerLayoutGuide type="bottom" id="xmm-Bh-rKY"/>
@@ -63,7 +63,7 @@
         <!--Settings-->
         <scene sceneID="7pK-lh-hCt">
             <objects>
-                <tableViewController id="Mi5-Gh-hv2" customClass="SettingsTableViewController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Mi5-Gh-hv2" customClass="SettingsController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="static" style="grouped" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Eja-1q-uXc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,7 +194,7 @@
         <!--Statistics-->
         <scene sceneID="X69-mn-sxo">
             <objects>
-                <viewController title="Statistics" id="cMI-Vb-Iq9" customClass="StatisticsViewController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Statistics" id="cMI-Vb-Iq9" customClass="StatisticsController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fpx-Xu-DkN"/>
                         <viewControllerLayoutGuide type="bottom" id="xhu-fY-UcP"/>
@@ -213,7 +213,7 @@
         <!--Dream Book-->
         <scene sceneID="n4B-3f-bG4">
             <objects>
-                <tableViewController title="Dream Book" id="PAE-Gu-qZc" customClass="DreamsTableViewController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Dream Book" id="PAE-Gu-qZc" customClass="DreamsController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="mAY-2q-FL8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,10 +246,10 @@
             </objects>
             <point key="canvasLocation" x="-954" y="699"/>
         </scene>
-        <!--Dream View Controller-->
+        <!--Dream Controller-->
         <scene sceneID="w23-RH-DSE">
             <objects>
-                <viewController id="EPZ-Bb-iTr" customClass="DreamViewController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EPZ-Bb-iTr" customClass="DreamController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="swF-Xp-jnj"/>
                         <viewControllerLayoutGuide type="bottom" id="EBy-8X-dYU"/>

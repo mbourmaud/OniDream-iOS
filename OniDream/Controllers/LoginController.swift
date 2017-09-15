@@ -10,7 +10,7 @@ import SwiftMessages
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginController: UIViewController, UITextFieldDelegate {
 	var loginInput: Input?
 	var passwordInput: Input?
 	var loginButton: UIButton?
@@ -74,7 +74,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
 	func handleRegisterClick(_ sender: UIButton) {
-		self.navigationController?.pushViewController(RegisterViewController(), animated: true)
+		self.navigationController?.pushViewController(RegisterController(), animated: true)
 	}
     
     /*private func showErrorMessage(title:String, message: String) {

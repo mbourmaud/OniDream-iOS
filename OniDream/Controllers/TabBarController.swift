@@ -9,7 +9,7 @@
 import UIKit
 import SwiftIcons
 
-class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
+class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
