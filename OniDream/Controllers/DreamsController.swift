@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DreamsTableViewController: UITableViewController {
+class DreamsController: UITableViewController {
 	var dreams: [Dream] = []
 	var selectedDream: Dream = Dream()
 	
@@ -98,7 +98,7 @@ class DreamsTableViewController: UITableViewController {
 	
 	@IBAction func unwindToDreams(_ sender: UIStoryboardSegue) {
 		/* If the sender is DreamVC, we get the dream and add it to the tableView */
-		if let sourceViewController = sender.source as? DreamViewController {
+		if let sourceViewController = sender.source as? DreamController {
 			let dream : Dream = sourceViewController.dream
 			
 			/* If the dream has just been upadted, we modify it and reload the rows */
@@ -121,7 +121,7 @@ class DreamsTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let dreamViewController = segue.destination as? DreamViewController {
+		if let dreamViewController = segue.destination as? DreamController {
 			print("PREPARE TO SEGUE")
 			dreamViewController.dream = Dream(title: "DREAMMMM", content: "wowoowowo", date: Date())
 			print(selectedDream.description)

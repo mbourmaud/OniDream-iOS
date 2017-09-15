@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class StatisticsViewController: UIViewController {
+class StatisticsController: UIViewController {
 	
 	var scrollView: UIScrollView!
     var blurEffectView: UIVisualEffectView!

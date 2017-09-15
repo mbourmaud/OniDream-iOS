@@ -34,18 +34,21 @@ final class ModalController {
     
     static let shared = ModalController()
     
-	public func showModal(title: String, message: String, type: ModalType = ModalType.success) {
+	public func showModal(title: String,
+	                      message: String,
+	                      type: ModalType = ModalType.success,
+	                      position: SwiftMessages.PresentationStyle = SwiftMessages.PresentationStyle.center) {
 		if (type == .success
 			|| type == .warning
 			|| type == .error
 			|| type == .info) {
-			self.showMessageModal(title: title, message: message, type: type)
+			self.showMessageModal(title: title, message: message, type: type, position: position)
 		} else if (type == .loader) {
-			self.showLoaderModal(title: title, message: message)
+			self.showLoaderModal(title: title, message: message, position: position)
 		}
 	}
 	
-	private func showLoaderModal(title:String, message: String) {
+	private func showLoaderModal(title:String, message: String, position: SwiftMessages.PresentationStyle) {
 		let modal = MessageView.viewFromNib(layout: .CardView)
 		modal.configureDropShadow()
 
@@ -60,7 +63,7 @@ final class ModalController {
 		// Config Setup
 		var config = SwiftMessages.defaultConfig
 		
-		config.presentationStyle = .center
+		config.presentationStyle = position
 		config.duration = .seconds(seconds: 3)
 		config.dimMode = .blur(style: .dark, alpha: 1.0, interactive: true)
 
@@ -70,7 +73,7 @@ final class ModalController {
 		SwiftMessages.show(config: config, view: modal)
 	}
 	
-	private func showMessageModal(title: String, message: String, type: ModalType) {
+	private func showMessageModal(title: String, message: String, type: ModalType, position: SwiftMessages.PresentationStyle) {
 		let modal = MessageView.viewFromNib(layout: .CardView)
 		modal.configureDropShadow()
 		modal.configureTheme(self.SwiftMessagesType[type]!)
@@ -79,8 +82,8 @@ final class ModalController {
 		// Config Setup
 		var config = SwiftMessages.defaultConfig
 		
-		config.presentationStyle = .bottom
-		config.duration = .seconds(seconds: 3)
+		config.presentationStyle = position
+		config.duration = .seconds(seconds: 5)
 		
 		modal.configureContent(title: title, body: message)
 

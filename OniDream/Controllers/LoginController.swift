@@ -10,7 +10,7 @@ import SwiftMessages
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginController: UIViewController, UITextFieldDelegate {
 	var loginInput: Input?
 	var passwordInput: Input?
 	var loginButton: UIButton?
@@ -60,21 +60,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let password = self.passwordInput?.textField.text
 
         if ((email?.isEmpty)! || (password?.isEmpty)!) {
-            ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error)
+			ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error, position: .top)
             return
         }
         Auth.auth().signIn(withEmail: email!, password: password!) { (user, error) in
             if error == nil {
-                ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
+				ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success, position: .top)
             } else {
                 let errorMessage = error?.localizedDescription
-                ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
+				ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error, position: .top)
             }
         }
     }
     
 	func handleRegisterClick(_ sender: UIButton) {
-		self.navigationController?.pushViewController(RegisterViewController(), animated: true)
+		self.navigationController?.pushViewController(RegisterController(), animated: true)
 	}
     
     /*private func showErrorMessage(title:String, message: String) {

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController, UITextFieldDelegate {
+class RegisterController: UIViewController, UITextFieldDelegate {
 	var loginInput: Input?
 	var passwordInput: Input?
 	var confirmPasswordInput: Input?

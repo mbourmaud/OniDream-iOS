@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsController: UITableViewController {
 
     var numberOfRowsForSection: [Int:Int] = [0:1, 1:3, 2:3, 3:1, 4:1]
     var sectionTitle: [Int:String] = [0:"Bluetooth", 1:"Alarm", 2:"Sound", 3:"Vibration", 4:"Led"]

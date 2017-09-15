@@ -12,15 +12,17 @@
 		601EB4A01F699C830048CCF1 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EB49F1F699C830048CCF1 /* UIApplicationExtension.swift */; };
 		601EB4A21F69C5DC0048CCF1 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EB4A11F69C5DC0048CCF1 /* View.swift */; };
 		601EB4A41F69C78A0048CCF1 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EB4A31F69C78A0048CCF1 /* TableView.swift */; };
-		601EB4A61F69CB9F0048CCF1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EB4A51F69CB9F0048CCF1 /* SettingsTableViewController.swift */; };
+		601EB4A61F69CB9F0048CCF1 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EB4A51F69CB9F0048CCF1 /* SettingsController.swift */; };
 		601EB4A81F6A78A40048CCF1 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EB4A71F6A78A40048CCF1 /* Form.swift */; };
 		601EB4AA1F6A9B9B0048CCF1 /* ModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EB4A91F6A9B9B0048CCF1 /* ModalController.swift */; };
 		601EB4B91F6ADB270048CCF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 601EB4B81F6ADB270048CCF1 /* GoogleService-Info.plist */; };
-		6042591D1F68472C0091B1CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6042591C1F68472C0091B1CD /* LoginViewController.swift */; };
+		6042591D1F68472C0091B1CD /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6042591C1F68472C0091B1CD /* LoginController.swift */; };
 		604259211F6879480091B1CD /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604259201F6879480091B1CD /* TextField.swift */; };
 		604259231F6881AE0091B1CD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604259221F6881AE0091B1CD /* Button.swift */; };
-		604259251F6889320091B1CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604259241F6889320091B1CD /* RegisterViewController.swift */; };
+		604259251F6889320091B1CD /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604259241F6889320091B1CD /* RegisterController.swift */; };
 		605273C81F65F0BA001C9908 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605273C71F65F0BA001C9908 /* UITableViewExtension.swift */; };
+		6088D4051F6C204F00EE6B0C /* PeripheralsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6088D4041F6C204F00EE6B0C /* PeripheralsController.swift */; };
+		6088D4061F6C2AC900EE6B0C /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6088D4031F6C1FE900EE6B0C /* BluetoothSerial.swift */; };
 		609E473D1F644D37000EF712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E473C1F644D37000EF712 /* AppDelegate.swift */; };
 		609E47441F644D37000EF712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609E47421F644D37000EF712 /* Main.storyboard */; };
 		609E47461F644D37000EF712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609E47451F644D37000EF712 /* Assets.xcassets */; };
@@ -29,11 +31,11 @@
 		609E475F1F644D37000EF712 /* OniDreamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E475E1F644D37000EF712 /* OniDreamUITests.swift */; };
 		60B1EA4A1F64692500F02240 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1EA491F64692500F02240 /* UIViewExtension.swift */; };
 		60B1EA4C1F64698C00F02240 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1EA4B1F64698C00F02240 /* UILabelExtension.swift */; };
-		60C3BCF41F654539000F2528 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF31F654539000F2528 /* StatisticsViewController.swift */; };
+		60C3BCF41F654539000F2528 /* StatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF31F654539000F2528 /* StatisticsController.swift */; };
 		60C3BCF81F6590A9000F2528 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF71F6590A9000F2528 /* DreamTableViewCell.swift */; };
-		60C3BCFA1F6590BA000F2528 /* DreamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF91F6590BA000F2528 /* DreamsTableViewController.swift */; };
-		60C3BCFC1F65985C000F2528 /* DreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCFB1F65985C000F2528 /* DreamViewController.swift */; };
-		60C3BCFE1F659A42000F2528 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCFD1F659A42000F2528 /* TabBarViewController.swift */; };
+		60C3BCFA1F6590BA000F2528 /* DreamsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF91F6590BA000F2528 /* DreamsController.swift */; };
+		60C3BCFC1F65985C000F2528 /* DreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCFB1F65985C000F2528 /* DreamController.swift */; };
+		60C3BCFE1F659A42000F2528 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCFD1F659A42000F2528 /* TabBarController.swift */; };
 		60C3BD001F659B3C000F2528 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCFF1F659B3C000F2528 /* UIImageExtension.swift */; };
 		60D9EB0B1F6456080068969F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB0A1F6456080068969F /* Constants.swift */; };
 		60D9EB0D1F6461C10068969F /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9EB0C1F6461C10068969F /* Dream.swift */; };
@@ -69,16 +71,17 @@
 		601EB49F1F699C830048CCF1 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		601EB4A11F69C5DC0048CCF1 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		601EB4A31F69C78A0048CCF1 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		601EB4A51F69CB9F0048CCF1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		601EB4A51F69CB9F0048CCF1 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		601EB4A71F6A78A40048CCF1 /* Form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		601EB4A91F6A9B9B0048CCF1 /* ModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalController.swift; sourceTree = "<group>"; };
 		601EB4B81F6ADB270048CCF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		6042591C1F68472C0091B1CD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6042591C1F68472C0091B1CD /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		604259201F6879480091B1CD /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		604259221F6881AE0091B1CD /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		604259241F6889320091B1CD /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		604259241F6889320091B1CD /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		605273C71F65F0BA001C9908 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
-		60687B5A1F6BFEE100FF1DC0 /* loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader.gif; sourceTree = "<group>"; };
+		6088D4031F6C1FE900EE6B0C /* BluetoothSerial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSerial.swift; sourceTree = "<group>"; };
+		6088D4041F6C204F00EE6B0C /* PeripheralsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralsController.swift; sourceTree = "<group>"; };
 		609E47391F644D37000EF712 /* OniDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OniDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		609E473C1F644D37000EF712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		609E47431F644D37000EF712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,11 +96,11 @@
 		609E47601F644D37000EF712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60B1EA491F64692500F02240 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		60B1EA4B1F64698C00F02240 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
-		60C3BCF31F654539000F2528 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		60C3BCF31F654539000F2528 /* StatisticsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsController.swift; sourceTree = "<group>"; };
 		60C3BCF71F6590A9000F2528 /* DreamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamTableViewCell.swift; sourceTree = "<group>"; };
-		60C3BCF91F6590BA000F2528 /* DreamsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamsTableViewController.swift; sourceTree = "<group>"; };
-		60C3BCFB1F65985C000F2528 /* DreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamViewController.swift; sourceTree = "<group>"; };
-		60C3BCFD1F659A42000F2528 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		60C3BCF91F6590BA000F2528 /* DreamsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamsController.swift; sourceTree = "<group>"; };
+		60C3BCFB1F65985C000F2528 /* DreamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamController.swift; sourceTree = "<group>"; };
+		60C3BCFD1F659A42000F2528 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		60C3BCFF1F659B3C000F2528 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		60D9EB0A1F6456080068969F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		60D9EB0C1F6461C10068969F /* Dream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dream.swift; sourceTree = "<group>"; };
@@ -152,6 +155,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6088D4021F6C1FC500EE6B0C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6088D4031F6C1FE900EE6B0C /* BluetoothSerial.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		609E47301F644D37000EF712 = {
 			isa = PBXGroup;
 			children = (
@@ -177,8 +188,8 @@
 		609E473B1F644D37000EF712 /* OniDream */ = {
 			isa = PBXGroup;
 			children = (
-				60687B5A1F6BFEE100FF1DC0 /* loader.gif */,
 				601EB4B81F6ADB270048CCF1 /* GoogleService-Info.plist */,
+				6088D4021F6C1FC500EE6B0C /* Protocols */,
 				60D9EB091F64552D0068969F /* Helpers */,
 				C15E096D1F6AE843001780AF /* Services */,
 				60D9EB071F64551D0068969F /* Controllers */,
@@ -240,13 +251,14 @@
 		60D9EB071F64551D0068969F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				60C3BCF31F654539000F2528 /* StatisticsViewController.swift */,
-				60C3BCF91F6590BA000F2528 /* DreamsTableViewController.swift */,
-				60C3BCFB1F65985C000F2528 /* DreamViewController.swift */,
-				60C3BCFD1F659A42000F2528 /* TabBarViewController.swift */,
-				6042591C1F68472C0091B1CD /* LoginViewController.swift */,
-				604259241F6889320091B1CD /* RegisterViewController.swift */,
-				601EB4A51F69CB9F0048CCF1 /* SettingsTableViewController.swift */,
+				6088D4041F6C204F00EE6B0C /* PeripheralsController.swift */,
+				60C3BCF31F654539000F2528 /* StatisticsController.swift */,
+				60C3BCF91F6590BA000F2528 /* DreamsController.swift */,
+				60C3BCFB1F65985C000F2528 /* DreamController.swift */,
+				60C3BCFD1F659A42000F2528 /* TabBarController.swift */,
+				6042591C1F68472C0091B1CD /* LoginController.swift */,
+				604259241F6889320091B1CD /* RegisterController.swift */,
+				601EB4A51F69CB9F0048CCF1 /* SettingsController.swift */,
 				601EB4A91F6A9B9B0048CCF1 /* ModalController.swift */,
 			);
 			path = Controllers;
@@ -529,6 +541,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OniDream/Pods-OniDream-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BluetoothKit/BluetoothKit.framework",
 				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -546,6 +559,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BluetoothKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -609,6 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60D9EB191F64649D0068969F /* Modal.swift in Sources */,
+				6088D4051F6C204F00EE6B0C /* PeripheralsController.swift in Sources */,
 				60B1EA4A1F64692500F02240 /* UIViewExtension.swift in Sources */,
 				C15E096F1F6AE867001780AF /* UserService.swift in Sources */,
 				60D9EB151F6464690068969F /* Card.swift in Sources */,
@@ -616,23 +631,24 @@
 				60B1EA4C1F64698C00F02240 /* UILabelExtension.swift in Sources */,
 				604259231F6881AE0091B1CD /* Button.swift in Sources */,
 				609E473D1F644D37000EF712 /* AppDelegate.swift in Sources */,
+				6088D4061F6C2AC900EE6B0C /* BluetoothSerial.swift in Sources */,
 				601EB4A81F6A78A40048CCF1 /* Form.swift in Sources */,
-				6042591D1F68472C0091B1CD /* LoginViewController.swift in Sources */,
+				6042591D1F68472C0091B1CD /* LoginController.swift in Sources */,
 				601EB4AA1F6A9B9B0048CCF1 /* ModalController.swift in Sources */,
-				60C3BCF41F654539000F2528 /* StatisticsViewController.swift in Sources */,
+				60C3BCF41F654539000F2528 /* StatisticsController.swift in Sources */,
 				60D9EB1D1F6464D50068969F /* Input.swift in Sources */,
 				601EB4A01F699C830048CCF1 /* UIApplicationExtension.swift in Sources */,
 				605273C81F65F0BA001C9908 /* UITableViewExtension.swift in Sources */,
 				601EB4A41F69C78A0048CCF1 /* TableView.swift in Sources */,
-				604259251F6889320091B1CD /* RegisterViewController.swift in Sources */,
+				604259251F6889320091B1CD /* RegisterController.swift in Sources */,
 				60D9EB0D1F6461C10068969F /* Dream.swift in Sources */,
 				60D9EB1F1F6465040068969F /* Cell.swift in Sources */,
 				60D9EB0B1F6456080068969F /* Constants.swift in Sources */,
-				60C3BCFC1F65985C000F2528 /* DreamViewController.swift in Sources */,
-				60C3BCFE1F659A42000F2528 /* TabBarViewController.swift in Sources */,
+				60C3BCFC1F65985C000F2528 /* DreamController.swift in Sources */,
+				60C3BCFE1F659A42000F2528 /* TabBarController.swift in Sources */,
 				604259211F6879480091B1CD /* TextField.swift in Sources */,
-				601EB4A61F69CB9F0048CCF1 /* SettingsTableViewController.swift in Sources */,
-				60C3BCFA1F6590BA000F2528 /* DreamsTableViewController.swift in Sources */,
+				601EB4A61F69CB9F0048CCF1 /* SettingsController.swift in Sources */,
+				60C3BCFA1F6590BA000F2528 /* DreamsController.swift in Sources */,
 				601EB4A21F69C5DC0048CCF1 /* View.swift in Sources */,
 				60C3BD001F659B3C000F2528 /* UIImageExtension.swift in Sources */,
 			);
@@ -790,7 +806,7 @@
 				DEVELOPMENT_TEAM = 9Q4H85X97E;
 				INFOPLIST_FILE = OniDream/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app.OniDream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -804,7 +820,7 @@
 				DEVELOPMENT_TEAM = 9Q4H85X97E;
 				INFOPLIST_FILE = OniDream/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app.OniDream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
