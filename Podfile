@@ -19,6 +19,7 @@ target 'OniDream' do
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   pod 'SwiftMessages'
   pod 'Firebase/Core'
+  pod 'SwiftGifOrigin', '~> 1.6.1'
 
   target 'OniDreamTests' do
     inherit! :search_paths

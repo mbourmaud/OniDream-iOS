@@ -17,6 +17,5 @@ extension UIImage {
 		let image = UIGraphicsGetImageFromCurrentImageContext()
 		UIGraphicsEndImageContext()
 		return image!
-		
 	}
 }

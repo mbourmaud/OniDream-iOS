@@ -44,7 +44,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let password = self.passwordInput?.textField.text
 
         if ((login?.isEmpty)! || (password?.isEmpty)!) {
-            ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error)
+            ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .loader)
             /*ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password")
             ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error)
             ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .info)
