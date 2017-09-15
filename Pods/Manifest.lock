@@ -41,8 +41,9 @@ PODS:
     - Realm (= 2.10.0)
   - SnapKit (3.2.0)
   - Spring (1.0.3)
+  - SwiftGifOrigin (1.6.1)
   - SwiftIcons (1.4.1)
-  - SwiftMessages (3.3.3)
+  - SwiftMessages (3.5.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - RealmSwift
   - SnapKit (~> 3.0)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
+  - SwiftGifOrigin (~> 1.6.1)
   - SwiftIcons
   - SwiftMessages
   - SwiftyJSON
@@ -89,8 +91,9 @@ SPEC CHECKSUMS:
   RealmSwift: 34073ad3a31232bbaf7c0db898c037940284cba2
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   SwiftIcons: 7a3fb54d2876b5b207a68c5e34dfbde2c4e00296
-  SwiftMessages: 09cea3336e3fb63c3578983c8aac65acaa6d884a
+  SwiftMessages: ea0184c801030e52674c603896812c392c129248
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
 PODFILE CHECKSUM: f1ddc84982b8fe0ea2573bbe9bc7e432e513186c

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3366A65F76A585B1840FDBF96DCA7B6B"
+               BlueprintIdentifier = "0857E04DE94C890A0E713D84C6A85CA6"
                BuildableName = "Pods_OniDream.framework"
                BlueprintName = "Pods-OniDream"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3366A65F76A585B1840FDBF96DCA7B6B"
+            BlueprintIdentifier = "0857E04DE94C890A0E713D84C6A85CA6"
             BuildableName = "Pods_OniDream.framework"
             BlueprintName = "Pods-OniDream"
             ReferencedContainer = "container:Pods.xcodeproj">
