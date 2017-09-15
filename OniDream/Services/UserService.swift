@@ -17,30 +17,13 @@ final class UserService {
     // MARK: Shared Instance
     
     static let shared = UserService()
-    
-//    public func login(email: String, password: String, auth: Auth) -> Auth? {
-//        var authError: Bool
-//
-//        let AuthResultCallback toto = auth.signIn(withEmail: email, password: password) { (user, error) in
-//            if error == nil {
-//                ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
-//                authError = false
-//            } else {
-//                let errorMessage = error?.localizedDescription
-//                ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
-//                authError = true
-//                print("authError = true")
-//            }
-//            print("TEST")
-//        }
-//        if (authError) {
-//            print("FAIIIIILLLL")
-//            return nil
-//        }
-//        return auth
-//    }
+
     public func login(email: String, password: String, auth: Auth, completion: AuthResultCallback?) {
 		auth.signIn(withEmail: email, password: password, completion: completion)
+    }
+    
+    public func signup(email: String, password: String, auth: Auth, completion: AuthResultCallback?) {
+        auth.createUser(withEmail: email, password: password, completion: completion)
     }
     
     public func setCurrentUser(auth: Auth) -> User {

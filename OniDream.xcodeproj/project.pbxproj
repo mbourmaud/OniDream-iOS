@@ -44,7 +44,7 @@
 		A33AF98F86B9C0F1640F6F63 /* Pods_OniDreamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888A10BDB7AE8DF0D06DDF61 /* Pods_OniDreamUITests.framework */; };
 		C15E096F1F6AE867001780AF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15E096E1F6AE867001780AF /* UserService.swift */; };
 		C1A422861F6C0B6700CE655B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A422851F6C0B6700CE655B /* User.swift */; };
-		C1A422891F6C104F00CE655B /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A422881F6C104F00CE655B /* Sex.swift */; };
+		C1A422891F6C104F00CE655B /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A422881F6C104F00CE655B /* Gender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +112,7 @@
 		B6182FE19090C7E292288FD1 /* Pods-OniDreamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamUITests/Pods-OniDreamUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C15E096E1F6AE867001780AF /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C1A422851F6C0B6700CE655B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C1A422881F6C104F00CE655B /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
+		C1A422881F6C104F00CE655B /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		DFEB90B3D392068A36B345C5 /* Pods-OniDreamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamTests/Pods-OniDreamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F640634461F2FC07BD80B5B0 /* Pods-OniDreamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OniDreamUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OniDreamUITests/Pods-OniDreamUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,7 +279,7 @@
 		C1A422871F6C101B00CE655B /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				C1A422881F6C104F00CE655B /* Sex.swift */,
+				C1A422881F6C104F00CE655B /* Gender.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -374,7 +374,7 @@
 				TargetAttributes = {
 					609E47381F644D37000EF712 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 9Q4H85X97E;
+						DevelopmentTeam = SZMUX4LUU5;
 						ProvisioningStyle = Automatic;
 					};
 					609E474E1F644D37000EF712 = {
@@ -470,7 +470,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		649E7068F214F0489E5F6D1D /* [CP] Embed Pods Frameworks */ = {
@@ -596,7 +596,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FF9A81EA149C065C1D80BF53 /* [CP] Check Pods Manifest.lock */ = {
@@ -614,7 +614,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -636,7 +636,7 @@
 				6042591D1F68472C0091B1CD /* LoginViewController.swift in Sources */,
 				601EB4AA1F6A9B9B0048CCF1 /* ModalController.swift in Sources */,
 				60C3BCF41F654539000F2528 /* StatisticsViewController.swift in Sources */,
-				C1A422891F6C104F00CE655B /* Sex.swift in Sources */,
+				C1A422891F6C104F00CE655B /* Gender.swift in Sources */,
 				60D9EB1D1F6464D50068969F /* Input.swift in Sources */,
 				601EB4A01F699C830048CCF1 /* UIApplicationExtension.swift in Sources */,
 				605273C81F65F0BA001C9908 /* UITableViewExtension.swift in Sources */,
@@ -805,10 +805,10 @@
 			baseConfigurationReference = 35BDEF1C4C9451D7B752B705 /* Pods-OniDream.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9Q4H85X97E;
+				DEVELOPMENT_TEAM = SZMUX4LUU5;
 				INFOPLIST_FILE = OniDream/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app.OniDream;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app.OniDreamMP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -819,10 +819,10 @@
 			baseConfigurationReference = 8A5352A4A4FA803E6A7FFEBC /* Pods-OniDream.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9Q4H85X97E;
+				DEVELOPMENT_TEAM = SZMUX4LUU5;
 				INFOPLIST_FILE = OniDream/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app.OniDream;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onidream.app.OniDreamMP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

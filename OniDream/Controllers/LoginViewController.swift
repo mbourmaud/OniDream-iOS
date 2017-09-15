@@ -59,27 +59,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func handleSignIn(_ sender: UIButton) {
         let email = self.loginInput?.textField.text
         let password = self.passwordInput?.textField.text
-        var auth = Auth.auth()
 
         if ((email?.isEmpty)! || (password?.isEmpty)!) {
             ModalController.shared.showModal(title: "Error", message: "Please enter your login and your password", type: .error)
             return
         }
 		
-        UserService.shared.login(email: email!, password: password!, auth: auth, completion: { (user, error) in
+        UserService.shared.login(email: email!, password: password!, auth: Auth.auth(), completion: { (user, error) in
 			if error == nil {
 				ModalController.shared.showModal(title: "Success", message: "You are now logged in", type: .success)
+                let currentUser = UserService.shared.setCurrentUser(auth: Auth.auth())
+                print(currentUser.email) // DEBUG
+                print(currentUser.fireUid) // DEBUG
 			} else {
 				let errorMessage = error?.localizedDescription
 				ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
-				return
 			}
 		})
-		
-        //currentUser = UserService.shared.setCurrentUser(auth: auth)
-        print("ÇA MARCHE !!!")
-        print(currentUser?.email) // DEBUG
-        print(currentUser?.fireUid) // DEBUG
     }
     
 	func handleRegisterClick(_ sender: UIButton) {

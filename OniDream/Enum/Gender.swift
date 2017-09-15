@@ -10,12 +10,12 @@ import Foundation
 import Realm
 import RealmSwift
 
-enum Sex: Int {
+enum Gender: Int {
     case UNKNOWN = 0
     case MALE = 1
     case FEMALE = 2
     
-    static func stateFromString(stateString: String) -> Sex? {
+    static func stateFromString(stateString: String) -> Gender? {
         switch stateString {
         case "male":
             return .MALE

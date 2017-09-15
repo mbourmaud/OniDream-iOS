@@ -16,13 +16,13 @@ class User: Object {
     dynamic var firstName: String
     dynamic var lastName: String
     dynamic var age: Int
-    dynamic var rawSex: Int
-    public var sex: Sex {
+    dynamic var rawGender: Int
+    public var gender: Gender {
         get {
-            return Sex(rawValue: rawSex)!
+            return Gender(rawValue: rawGender)!
         }
         set {
-            rawSex = newValue.rawValue
+            rawGender = newValue.rawValue
         }
     }
     
@@ -31,15 +31,15 @@ class User: Object {
     }
     
     
-    init(fireUid: String, email: String, firstName: String, lastName: String, age: Int, sex: Sex) {
+    init(fireUid: String, email: String, firstName: String, lastName: String, age: Int, gender: Gender) {
         self.fireUid = fireUid
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
         self.age = age
-        self.rawSex = -1
+        self.rawGender = -1
         super.init()
-        self.sex = sex
+        self.gender = gender
     }
     
     required init() {
@@ -48,9 +48,9 @@ class User: Object {
         self.firstName = ""
         self.lastName = ""
         self.age = -1
-        self.rawSex = -1
+        self.rawGender = -1
         super.init()
-        self.sex = Sex.UNKNOWN
+        self.gender = Gender.UNKNOWN
     }
     
     

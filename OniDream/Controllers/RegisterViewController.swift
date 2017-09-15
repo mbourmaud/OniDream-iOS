@@ -58,14 +58,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             ModalController.shared.showModal(title: "Error", message: "Passwords are different", type: .error)
             return
         }
-        Auth.auth().createUser(withEmail: email!, password: password!) { (user, error) in
+        UserService.shared.signup(email: email!, password: password!, auth: Auth.auth(), completion: { (user, error) in
             if error == nil {
                 ModalController.shared.showModal(title: "Success", message: "You are now signed up", type: .success)
             } else {
                 let errorMessage = error?.localizedDescription
                 ModalController.shared.showModal(title: "Error", message: errorMessage!, type: .error)
             }
-        }
+        })
     }
 	
 	private func showRegisterForm() {
