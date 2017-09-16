@@ -19,6 +19,8 @@ target 'OniDream' do
   pod 'SwiftGifOrigin', '~> 1.6.1'
   pod 'Firebase/Auth'
   pod 'BluetoothKit', '~> 0.4'
+  pod 'Charts'
+  pod 'ChartsRealm'
 
   target 'OniDreamTests' do
     inherit! :search_paths
