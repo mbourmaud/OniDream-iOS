@@ -18,7 +18,16 @@ internal struct Identifier {
 	// MARK: Cells Identifiers
 	internal static let dreamTableViewCell = "dreamTableViewCell"
 	internal static let peripheralCell = "peripheralCell"
-	
+	internal static let bluetoothCell = "bluetoothCell"
+	internal static let soundSwitchCell = "soundSwitchCell"
+	internal static let vibrationSwitchCell = "vibrationSwitchCell"
+	internal static let	timeCell = "timeCell"
+	internal static let volumeCell = "volumeCell"
+	internal static let soundCell = "soundCell"
+	internal static let powerCell = "powerCell"
+	internal static let ledCell = "ledCell"
+	internal static let colorCell = "colorCell"
+
 	// MARK: Segues Identifiers
 	internal static let unwindToDreams = "unwindToDreams"
 	internal static let composeDream = "composeDream"
