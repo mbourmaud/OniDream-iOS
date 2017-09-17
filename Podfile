@@ -19,6 +19,7 @@ target 'OniDream' do
   pod 'Firebase/Auth'
   pod 'IGColorPicker'
   pod 'SwiftySound'
+  pod 'Charts'
 
   target 'OniDreamTests' do
     inherit! :search_paths
