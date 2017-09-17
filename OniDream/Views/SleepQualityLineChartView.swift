@@ -21,13 +21,13 @@ class SleepQualityLineChartView: LineChartView {
         upper_limit.lineWidth = 2
         upper_limit.lineDashLengths = [10, 10, 10]
         upper_limit.labelPosition = ChartLimitLine.LabelPosition.rightTop
-        upper_limit.valueTextColor = Color.white50
+        upper_limit.valueTextColor = Color.white80
         
         let bottom_limit: ChartLimitLine = ChartLimitLine(limit: 50, label: ChartsText.badSleepQuality)
         bottom_limit.lineWidth = 2
         bottom_limit.lineDashLengths = [10, 10, 10]
         bottom_limit.labelPosition = ChartLimitLine.LabelPosition.rightTop
-        bottom_limit.valueTextColor = Color.white50
+        bottom_limit.valueTextColor = Color.white80
         
         let sleepDesc: Description = Description()
         
@@ -44,9 +44,9 @@ class SleepQualityLineChartView: LineChartView {
         
         self.rightAxis.addLimitLine(upper_limit)
         self.rightAxis.addLimitLine(bottom_limit)
-        self.rightAxis.labelTextColor = Color.white50
-        self.leftAxis.labelTextColor = Color.white50
-        self.xAxis.labelTextColor = Color.white50
+        self.rightAxis.labelTextColor = Color.white80
+        self.leftAxis.labelTextColor = Color.white80
+        self.xAxis.labelTextColor = Color.white80
         
         self.disableZoomEffects()
     }
@@ -93,7 +93,7 @@ class SleepQualityLineChartView: LineChartView {
         let setComp1 = LineChartDataSet(values: valsComp1, label: ChartsText.sleepQualityTW)
         setComp1.setColor(Color.blue)
         setComp1.fillColor = Color.purple
-        setComp1.circleColors = [Color.white50]
+        setComp1.circleColors = [Color.white80]
         setComp1.circleRadius = 3
         setComp1.axisDependency = YAxis.AxisDependency.left
         setComp1.drawFilledEnabled = true
