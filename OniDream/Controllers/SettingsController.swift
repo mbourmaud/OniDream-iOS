@@ -70,11 +70,17 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
 		// TIME LABEL
 		let timeLabel = UILabel(frame: CGRect(x:0, y:0, width: 200, height: 100))
 		timeLabel.text = self.setAlarmTimeLabelFromDate(date: (self.settings?.alarm?.time)!)
+		timeLabel.textColor = Color.white
 		timeLabel.textAlignment = NSTextAlignment.right
 
 		// SOUND LABEL
 		let soundLabel = UILabel(frame: CGRect(x:0, y:0, width: 100, height: 100))
 		soundLabel.text = self.settings?.sound?.name
+		if (self.settings?.sound?.isOn)! {
+			soundLabel.textColor = Color.white
+		} else {
+			soundLabel.textColor = Color.white50
+		}
 		soundLabel.textAlignment = NSTextAlignment.right
 		
 		// COLOR LABEL
@@ -144,6 +150,13 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
 		
 		if let volumeSlider = self.cellViews[4] as? UISlider {
 			volumeSlider.isEnabled = sender.isOn
+		}
+		if let soundLabel = self.cellViews[5] as? UILabel {
+			if (self.settings?.sound?.isOn)! {
+				soundLabel.textColor = Color.white
+			} else {
+				soundLabel.textColor = Color.white50
+			}
 		}
 	}
 	
@@ -244,7 +257,7 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
 			presentTimePickerInActionSheet()
 		}
 		
-		if cell?.reuseIdentifier == Identifier.soundCell {
+		if (cell?.reuseIdentifier == Identifier.soundCell && (self.settings?.sound?.isOn)!) {
 			presentSoundListInActionSheet()
 		}
 		
@@ -290,8 +303,12 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
 		let totalRow = tableView.numberOfRows(inSection: indexPath.section)
 		
 		let backgroundView = UIView()
-		backgroundView.backgroundColor = Color.white30
-		cell.backgroundColor = Color.clear
+		backgroundView.backgroundColor = Color.white10
+		if (totalRow == 1) {
+			backgroundView.layer.cornerRadius = Style.radius
+		}
+		backgroundView.layer.masksToBounds = true
+
 		cell.backgroundView = backgroundView
 
 		backgroundView.snp.makeConstraints { (make) -> Void in
@@ -304,6 +321,7 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
 		cell.textLabel!.text = self.cellLabels[cell.tag]
 		cell.textLabel!.font = Style.titleFont
 		cell.textLabel!.textColor = Color.white
+		cell.backgroundColor = Color.clear
 		cell.accessoryView = self.cellViews[cell.tag]
 		cell.selectionStyle = .none
 	}
