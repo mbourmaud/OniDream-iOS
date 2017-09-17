@@ -7,21 +7,39 @@
 //
 
 import UIKit
+import RealmSwift
 import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
 	var window: UIWindow?
 
-
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		
 		FirebaseApp.configure()
 
+		self.isAppAlreadyLaunchedOnce()
 		self.setNavigationBarAppearance(app: application)
 		self.setTabBarAppearance()
 		return true
+	}
+	
+	// Checking if it's the 1st launch
+	func isAppAlreadyLaunchedOnce() {
+		let defaults = UserDefaults.standard
+		let settings = Settings()
+		let realm = try! Realm()
+	
+		if defaults.string(forKey: "isAppAlreadyLaunchedOnce") != nil {
+			print("App already launched")
+		} else {
+			defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+			
+			try! realm.write {
+				realm.add(settings)
+			}
+	
+			print("App launched first time")
+		}
 	}
 	
 	/* Navigation TabBar style */
