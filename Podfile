@@ -20,6 +20,7 @@ target 'OniDream' do
   pod 'IGColorPicker'
   pod 'SwiftySound'
   pod 'Charts'
+  pod 'UITextView+Placeholder', '~> 1.2'
 
   target 'OniDreamTests' do
     inherit! :search_paths

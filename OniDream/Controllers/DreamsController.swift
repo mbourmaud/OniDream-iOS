@@ -123,7 +123,7 @@ class DreamsController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let dreamViewController = segue.destination as? DreamController {
 			print("PREPARE TO SEGUE")
-			dreamViewController.dream = Dream(title: "DREAMMMM", content: "wowoowowo", date: Date())
+			dreamViewController.dream = Dream(title: "", content: "", date: Date())
 			print(selectedDream.description)
 		}
     }

@@ -10,47 +10,37 @@ import UIKit
 
 class DreamController: UIViewController, UITextViewDelegate {
 	var dream: Dream!
-	var contentTextField: UITextView = UITextView()
-	var titleTextField: UITextField = UITextField()
-	let contentPlaceHolder: String = "Start typing what you remember from your dream... 🌔"
-	let titlePlaceHolder: String  = "Give a name to your dream 🌙"
+	var form: DreamForm!
+	var contentTextView: TextView = TextView(label: "Content", placeholder: "Start typing what you remember from your dream... 🌔")
+	var titleInput: Input = Input(label: "Login", placeholder: "Give a name to your dream 🌙")
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view = View(frame: self.view.frame)
-        
+		self.contentTextView.textView.delegate = self
+
         // Do any additional setup after loading the view.
 		self.drawNavigationBar()
-		self.buildLayout()
-        self.styleContentTextField()
-		self.styleTitleTextField()
 		
-		titleTextField.addTarget(self, action: #selector(self.titleChanged(sender:)), for: .editingChanged)
+		titleInput.textField.addTarget(self, action: #selector(self.titleChanged(sender:)), for: .editingChanged)
 
+		self.showDreamForm()
+		
 		/* If the content or the title is empty, the save button should be disabled */
 		self.checkDreamValidity()
     }
 	
-	private func buildLayout() {
-		let dreamTitleCard: Card = Card(title: "Title", content: self.titleTextField)
-		let dreamContentCard: Card = Card(title: "Content", content: self.contentTextField)
+	private func showDreamForm() {
+		let form: DreamForm = DreamForm(input: self.titleInput, textView: contentTextView)
 		
-		self.view.addSubview(dreamTitleCard)
-		self.view.addSubview(dreamContentCard)
+		self.view.addSubview(form)
 		
-		dreamTitleCard.snp.makeConstraints { (make) -> Void in
-			make.left.equalTo(self.view).offset(Style.margin)
-			make.right.equalTo(self.view).offset(-Style.margin)
-			make.top.equalTo(self.view).offset(Style.margin*10)
-			make.height.equalTo(100)
-		}
-		
-		dreamContentCard.snp.makeConstraints { (make) -> Void in
-			make.left.equalTo(self.view).offset(Style.margin)
-			make.right.equalTo(self.view).offset(-Style.margin)
-			make.top.equalTo(dreamTitleCard.snp.bottom).offset(Style.margin)
-			make.bottom.equalTo(self.view).offset(-Style.margin)
+		form.snp.makeConstraints { (make) -> Void in
+			make.left.equalTo(self.view)
+			make.right.equalTo(self.view)
+			make.height.equalTo(self.view)
+			make.top.equalTo(self.view).offset(Style.topOffset)
 		}
 	}
 
@@ -79,7 +69,7 @@ class DreamController: UIViewController, UITextViewDelegate {
 	}
 	
 	func saveTapped(_ sender: UIBarButtonItem) {
-		self.dream = Dream(title: self.titleTextField.text!, content: self.contentTextField.text!, date: Date())
+		self.dream = Dream(title: self.titleInput.textField.text!, content: self.contentTextView.textView.text!, date: Date())
 		performSegue(withIdentifier: Identifier.unwindToDreams, sender: self)
 	}
 	
@@ -89,66 +79,27 @@ class DreamController: UIViewController, UITextViewDelegate {
     }
 	
 	func textViewDidBeginEditing (_ textView: UITextView) {
-		if (self.contentTextField.text == self.contentPlaceHolder) {
-			
-			self.contentTextField.text = ""
-			self.contentTextField.textColor = Color.textColor
-			self.contentTextField.font = Style.textFont
-		}
-		
 		self.checkDreamValidity()
-		self.contentTextField.becomeFirstResponder()
+		self.contentTextView.becomeFirstResponder()
 	}
 	
 	
 	func textViewDidEndEditing(_ textView: UITextView) {
-		if (self.contentTextField.text == "") {
-			self.contentTextField.text = self.contentPlaceHolder
-			self.contentTextField.textColor = Color.placeholderColor
-			self.contentTextField.font = Style.placeholderFont
-		}
-		
 		self.checkDreamValidity()
-		self.contentTextField.resignFirstResponder()
+		self.contentTextView.resignFirstResponder()
 	}
 	
 	/* Just checking the validity of the title and the content to enable/disable the Save button in consequence */
 	func checkDreamValidity() {
-		let content = self.contentTextField.text ?? ""
-		let title = self.titleTextField.text ?? ""
+		let content = self.contentTextView.textView.text ?? ""
+		let title = self.titleInput.textField.text ?? ""
 		
-		if content.isEmpty || title.isEmpty || content == self.contentPlaceHolder {
+		if content.isEmpty || title.isEmpty {
 			self.navigationItem.rightBarButtonItem?.isEnabled = false
 			return
 		}
 		self.navigationItem.rightBarButtonItem?.isEnabled = true
 		return
-	}
-	
-	private func styleContentTextField() {
-		self.contentTextField.font = Style.textFont
-		self.contentTextField.textColor = Color.textColor
-		self.contentTextField.textContainerInset = UIEdgeInsets.zero
-		self.contentTextField.text = self.dream.content
-		self.contentTextField.textContainer.lineFragmentPadding = 0; // to remove left padding
-		
-		self.contentTextField.delegate = self
-		
-		if (self.contentTextField.text == "") {
-			self.contentTextField.text = self.contentPlaceHolder
-			self.contentTextField.textColor = Color.placeholderColor
-			self.contentTextField.font = Style.placeholderFont
-		}
-	}
-	
-	private func styleTitleTextField() {
-		self.titleTextField.text = self.dream.title
-		self.titleTextField.font = Style.textFont
-		self.titleTextField.textColor = Color.textColor
-		self.titleTextField.becomeFirstResponder()
-		self.titleTextField.attributedPlaceholder = NSAttributedString(string: self.titlePlaceHolder,
-		                                                               attributes: [NSForegroundColorAttributeName: Color.placeholderColor,
-		                                                                            NSFontAttributeName: Style.placeholderFont])
 	}
 	
     // MARK: - Navigation
@@ -159,8 +110,8 @@ class DreamController: UIViewController, UITextViewDelegate {
         // Pass the selected object to the new view controller.
 		if self.navigationItem.rightBarButtonItem === sender as AnyObject? {
 			print("SAVE BUTTON PRESSED")
-			let title = self.titleTextField.text
-			let content = self.contentTextField.text
+			let title = self.titleInput.textField.text
+			let content = self.contentTextView.textView.text
 			
 			dream = Dream(title: title!, content: content!, date: Date());
 			
