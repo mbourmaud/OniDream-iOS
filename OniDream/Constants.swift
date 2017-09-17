@@ -84,6 +84,7 @@ internal struct Color {
 	internal static let white80 = white.alpha(0.8)
 	internal static let white50 = white.alpha(0.5)
 	internal static let white30 = white.alpha(0.3)
+	internal static let white10 = white.alpha(0.1)
 	
 	// MARK: Gradients
 	internal static let gradient = [Color.purple, Color.blue].gradient()

@@ -38,7 +38,7 @@ class Card: UIView {
 		self.content = content
 		super.init(frame: CGRect.zero)
 		
-		self.backgroundColor = Color.white30
+		self.backgroundColor = Color.clear
 		self.addSubviews()
 	}
 	
@@ -52,10 +52,10 @@ class Card: UIView {
 		}
 		
 		self.content.snp.makeConstraints { (make) -> Void in
-			make.bottom.equalTo(self).offset(-Style.margin)
-			make.top.equalTo(header.snp.bottom).offset(Style.margin)
-			make.left.equalTo(self).offset(Style.margin)
-			make.right.equalTo(self).offset(-Style.margin)
+			make.bottom.equalTo(self)
+			make.top.equalTo(header.snp.bottom)
+			make.left.equalTo(self)
+			make.right.equalTo(self)
 		}
 		
 		super.updateConstraints()
@@ -75,17 +75,12 @@ class Card: UIView {
 	}
 	
 	private func styleCard() {
-		self.layer.cornerRadius = Style.radius
-		self.layer.masksToBounds = true
+		content.layer.cornerRadius = Style.radius
+		content.layer.masksToBounds = true
 	}
 	
 	private func styleContent() {
-		content.backgroundColor = Color.clear
-
-		if let content = self.content as? UILabel {
-			content.numberOfLines = 0
-			content.sizeToFit()
-		}
+		content.backgroundColor = Color.white10
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -104,7 +99,7 @@ class CardHeader: UIView {
 		self.rightInfoView = rightInfoView
 		super.init(frame: CGRect())
 		
-		self.backgroundColor = Color.white50
+		self.backgroundColor = Color.clear
 		// Adding the subviews
 		self.addSubviews()
 	}
@@ -131,21 +126,21 @@ class CardHeader: UIView {
 				make.width.equalTo(100)
 				make.top.equalTo(self)
 				make.bottom.equalTo(self)
-				make.right.equalTo(self).offset(-Style.margin)
+				make.right.equalTo(self)
 			}
 		
 			self.titleView.snp.makeConstraints { (make) -> Void in
 				make.right.equalTo(rightInfoView.snp.left)
 				make.top.equalTo(self)
 				make.bottom.equalTo(self)
-				make.left.equalTo(self).offset(Style.margin)
+				make.left.equalTo(self)
 			}
 		} else {
 			self.titleView.snp.makeConstraints { (make) -> Void in
-				make.right.equalTo(self).offset(Style.margin)
+				make.right.equalTo(self)
 				make.top.equalTo(self)
 				make.bottom.equalTo(self)
-				make.left.equalTo(self).offset(Style.margin)
+				make.left.equalTo(self)
 			}
 		}
 		
@@ -157,7 +152,7 @@ class CardHeader: UIView {
 		self.titleView.text = self.titleView.text?.uppercased()
 		self.titleView.numberOfLines = 1
 		self.titleView.font = Style.titleFont
-		self.titleView.textColor = Color.titleColor
+		self.titleView.textColor = Color.white
 		self.titleView.addCharactersSpacing(spacing: Style.charSpacing, text: self.titleView.text!)
 	}
 	

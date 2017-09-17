@@ -85,19 +85,64 @@ class SleepTimeDetailsController: UIViewController {
     
     
     func buildLayout() {
+//        // Creating the Scroll View
+//        self.scrollView = UIScrollView(frame: self.view.bounds)
+//
+//        self.scrollView.contentSize = CGSize(width: view.bounds.width, height: self.sleepTimeLineChartView.bounds.height + self.thisWeekValue.frame.height + self.thisWeekTitle.frame.height + self.lastWeekValue.frame.height + self.lastWeekTitle.frame.height + 30)
+//        self.scrollView.autoresizingMask = UIViewAutoresizing.flexibleHeight
+//
+//        self.scrollView.addSubview(self.sleepTimeLineChartView)
+//        self.scrollView.addSubview(self.thisWeekTitle)
+//        self.scrollView.addSubview(self.thisWeekValue)
+//        self.scrollView.addSubview(self.lastWeekTitle)
+//        self.scrollView.addSubview(self.lastWeekValue)
+//
+//        self.view.addSubview(self.scrollView)
+        
+        
+        // Creating the three ChartCards
+        let chartCard = Card(title: ChartsText.sleepTimeTitle, content: self.sleepTimeLineChartView)
+        let thisWeekCard = Card(title: ChartsText.avgSleepTimeTW, content: self.thisWeekValue)
+        let lastWeekCard = Card(title: ChartsText.avgSleepTimeLW, content: self.lastWeekValue)
+        
         // Creating the Scroll View
         self.scrollView = UIScrollView(frame: self.view.bounds)
         
-        self.scrollView.contentSize = CGSize(width: view.bounds.width, height: self.sleepTimeLineChartView.bounds.height + self.thisWeekValue.frame.height + self.thisWeekTitle.frame.height + self.lastWeekValue.frame.height + self.lastWeekTitle.frame.height + 30)
         self.scrollView.autoresizingMask = UIViewAutoresizing.flexibleHeight
+        self.view.addSubview(scrollView)
+        self.scrollView.addSubview(chartCard)
+        self.scrollView.addSubview(thisWeekCard)
+        self.scrollView.addSubview(lastWeekCard)
         
-        self.scrollView.addSubview(self.sleepTimeLineChartView)
-        self.scrollView.addSubview(self.thisWeekTitle)
-        self.scrollView.addSubview(self.thisWeekValue)
-        self.scrollView.addSubview(self.lastWeekTitle)
-        self.scrollView.addSubview(self.lastWeekValue)
+        chartCard.snp.makeConstraints { (make) -> Void in
+            make.height.equalTo(300)
+            make.left.equalTo(self.view).offset(Style.margin)
+            make.top.equalTo(self.scrollView).offset(Style.margin)
+            make.right.equalTo(self.view).offset(-Style.margin)
+        }
         
-        self.view.addSubview(self.scrollView)
+        thisWeekCard.snp.makeConstraints { (make) -> Void in
+            make.height.equalTo(100)
+            make.left.equalTo(self.view).offset(Style.margin)
+            make.top.equalTo(chartCard.snp.bottom).offset(Style.margin)
+            make.right.equalTo(self.view).offset(-Style.margin)
+        }
+        
+        lastWeekCard.snp.makeConstraints { (make) -> Void in
+            make.height.equalTo(100)
+            make.left.equalTo(self.view).offset(Style.margin)
+            make.top.equalTo(thisWeekCard.snp.bottom).offset(Style.margin)
+            make.right.equalTo(self.view).offset(-Style.margin)
+            make.bottom.equalTo(self.scrollView).offset(-Style.margin)
+        }
+        
+        self.scrollView.contentSize = CGSize(width: chartCard.bounds.size.width + thisWeekCard.bounds.size.width + lastWeekCard.bounds.size.width,
+                                             height: chartCard.bounds.size.height + thisWeekCard.bounds.size.height + lastWeekCard.bounds.size.height)
+        
+    }
+    
+    func goToPreviousPage(sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     /* Just init the LineChartView */
