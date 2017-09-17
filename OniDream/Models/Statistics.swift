@@ -11,29 +11,25 @@ import UIKit
 import RealmSwift
 import Realm
 
-class Statistics: Object {
+class Statistics {
     dynamic var sleepTime: [Double]
     dynamic var sleepQuality: [[String: Double]]
-    
+	
     init(sleepTime: [Double], sleepQuality: [[String: Double]]) {
         self.sleepTime = sleepTime
         self.sleepQuality = sleepQuality
-        
-        super.init()
-    }
+	}
     
     required init() {
         self.sleepTime = []
         self.sleepQuality = [[String: Double]]()
-        
-        super.init()
-    }
+	}
     
-    required init(value: Any, schema: RLMSchema) {
+    /*required init(value: Any, schema: RLMSchema) {
         fatalError("init(value:schema:) has not been implemented")
     }
     
     required init(realm: RLMRealm, schema: RLMObjectSchema) {
         fatalError("init(realm:schema:) has not been implemented")
-    }
+    }*/
 }
