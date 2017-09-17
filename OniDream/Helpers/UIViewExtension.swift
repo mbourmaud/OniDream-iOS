@@ -18,6 +18,13 @@ extension UIView {
 		self.layer.mask = rectShape
 	}
 	
+	func roundCorners(corners:UIRectCorner, radius: CGFloat = Style.radius) {
+		let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+		let mask = CAShapeLayer()
+		mask.path = path.cgPath
+		self.layer.mask = mask
+	}
+	
 	func setViewBackgroundGradient(sender: UIViewController, _ topColor:UIColor, _ bottomColor:UIColor) {
 		
 		let gradient = CAGradientLayer()
