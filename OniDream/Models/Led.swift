@@ -10,6 +10,6 @@ import Realm
 import RealmSwift
 
 class Led: Object {
-	dynamic var color: String = Color.purple.description
+	dynamic var color: String = Color.purple.hex()
 }
 

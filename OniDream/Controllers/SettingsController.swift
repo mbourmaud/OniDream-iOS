@@ -11,9 +11,10 @@ import SwiftIcons
 import RealmSwift
 import AVFoundation
 import SwiftySound
+import DateToolsSwift
 import IGColorPicker
 
-class SettingsController: UITableViewController, UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class SettingsController: UITableViewController, UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate, ColorPickerViewDelegate, ColorPickerViewDelegateFlowLayout {
 	var settings: Settings?
 	let realm = try! Realm()
 	var numberOfRowsForSection: [Int:Int] = [0:1, 1:3, 2:2, 3:1, 4:1]
@@ -55,33 +56,32 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
         super.viewDidLoad()
 		
 		self.settings = realm.objects(Settings.self).first
-		
-		print(self.settings?.sound?.isOn)
-		
         self.tableView.backgroundView = View(frame: self.tableView.bounds)
         self.tableView.separatorStyle = .none
-		//self.tableView.allowsSelection = false
 
 		self.initCellViews()
     }
 	
 	private func initCellViews() {
 		// BLE LABEL
-		let bleLabel = UILabel(frame: CGRect(x:0, y:0, width: 100, height: 100))
+		let bleLabel = UILabel(frame: CGRect(x:0, y:0, width: 40, height: 100))
 		bleLabel.setIcon(icon: .fontAwesome(.angleRight), iconSize: 30, color: Color.white, bgColor: Color.clear)
 		
 		// TIME LABEL
-		let timeLabel = UILabel(frame: CGRect(x:0, y:0, width: 100, height: 100))
-		timeLabel.setIcon(icon: .googleMaterialDesign(.alarm), iconSize: 30, color: Color.white, bgColor: Color.clear)
-		
+		let timeLabel = UILabel(frame: CGRect(x:0, y:0, width: 200, height: 100))
+		timeLabel.text = self.setAlarmTimeLabelFromDate(date: (self.settings?.alarm?.time)!)
+		timeLabel.textAlignment = NSTextAlignment.right
+
 		// SOUND LABEL
 		let soundLabel = UILabel(frame: CGRect(x:0, y:0, width: 100, height: 100))
-		soundLabel.setIcon(icon: .googleMaterialDesign(.musicNote), iconSize: 30, color: Color.white, bgColor: Color.clear)
+		soundLabel.text = self.settings?.sound?.name
+		soundLabel.textAlignment = NSTextAlignment.right
 		
 		// COLOR LABEL
-		let colorLabel = UILabel(frame: CGRect(x:0, y:0, width: 100, height: 100))
-		colorLabel.setIcon(icon: .fontAwesome(.circle), iconSize: 30, color: Color.red, bgColor: Color.clear)
-		
+		let colorLabel = UILabel(frame: CGRect(x:0, y:0, width: 40, height: 100))
+		colorLabel.setIcon(icon: .fontAwesome(.circle), iconSize: 30, color: UIColor(hex: (self.settings?.led?.color)!), bgColor: Color.clear)
+		colorLabel.textAlignment = NSTextAlignment.right
+
 		// SOUND SWITCH
 		let soundSwitch = UISwitch(frame: CGRect.zero)
 		soundSwitch.isOn = (self.settings?.sound?.isOn)!
@@ -208,48 +208,49 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
 			try! realm.write {
 				self.settings?.alarm?.time = self.datePickerValue!
 			}
-			self.setAlarmTimeLabelFromDate(date: (self.settings?.alarm?.time)!)
+			if let alarmTimeLabel = self.cellViews[3] as? UILabel {
+				alarmTimeLabel.text = self.setAlarmTimeLabelFromDate(date: (self.settings?.alarm?.time)!)
+			}
 		}
 	}
 	
-	private func setAlarmTimeLabelFromDate(date: Date) {
-		let calendar = Calendar.current
-		
-		let hour = calendar.component(.hour, from: (self.settings?.alarm?.time)!)
-		let minutes = calendar.component(.minute, from: (self.settings?.alarm?.time)!)
-		
-		if let alarmTimeLabel = self.cellViews[3] as? UILabel {
+	private func setAlarmTimeLabelFromDate(date: Date) -> String {
+			let hour = self.settings!.alarm!.time.hour
+			let minutes = self.settings!.alarm!.time.minute
+			
 			if (hour < 10 && minutes < 10) {
-				alarmTimeLabel.text = "0\(hour):0\(minutes)"
+				return "0\(hour):0\(minutes)"
 			}
 			else if (hour < 10 && minutes >= 10) {
-				alarmTimeLabel.text = "0\(hour):\(minutes)"
+				return "0\(hour):\(minutes)"
 			}
 				
 			else if (hour >= 10 && minutes < 10) {
-				alarmTimeLabel.text = "\(hour):0\(minutes)"
+				return "\(hour):0\(minutes)"
 			}
 			else {
-				alarmTimeLabel.text = "\(hour):\(minutes)"
+				return "\(hour):\(minutes)"
 			}
-		}
+		
+		return ""
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let cell = tableView.cellForRow(at: indexPath)
 		
+		print(cell?.reuseIdentifier)
+		
 		if cell?.reuseIdentifier == Identifier.timeCell {
 			presentTimePickerInActionSheet()
 		}
 		
-		if cell?.reuseIdentifier == Identifier.soundCell && (self.settings?.sound?.isOn)! {
+		if cell?.reuseIdentifier == Identifier.soundCell {
 			presentSoundListInActionSheet()
 		}
 		
-		/*
-		if cell?.reuseIdentifier == "ledViewCell" {
+		if cell?.reuseIdentifier == Identifier.ledCell {
 			presentColorPickerInActionSheet()
-		}*/
+		}
 		
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
@@ -265,7 +266,7 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
         
         headerLabel.text = self.sectionTitle[section]?.uppercased()
         headerLabel.font = Style.titleFont
-        headerLabel.textColor = Color.titleColor
+        headerLabel.textColor = Color.white
 		
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width - 20, height: 40))
         
@@ -277,9 +278,7 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
             make.bottom.equalTo(headerView)
             make.top.equalTo(headerView)
         }
-        
-        headerView.backgroundColor = Color.white50
-        
+		
         return headerView
     }
 
@@ -288,10 +287,20 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		let backgroundView = UIView(frame: CGRect.zero)
+		let totalRow = tableView.numberOfRows(inSection: indexPath.section)
+		
+		let backgroundView = UIView()
 		backgroundView.backgroundColor = Color.white30
 		cell.backgroundColor = Color.clear
 		cell.backgroundView = backgroundView
+
+		backgroundView.snp.makeConstraints { (make) -> Void in
+			make.left.equalTo(cell).offset(Style.margin)
+			make.right.equalTo(cell).offset(-Style.margin)
+			make.bottom.equalTo(cell)
+			make.top.equalTo(cell)
+		}
+		
 		cell.textLabel!.text = self.cellLabels[cell.tag]
 		cell.textLabel!.font = Style.titleFont
 		cell.textLabel!.textColor = Color.white
@@ -342,7 +351,9 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
 			try! realm.write {
 				self.settings?.sound?.name = self.soundPickerValue!
 			}
-			//self.soundNameLabel.text = self.settings.sound.title
+			if let soundCell = self.cellViews[5] as? UILabel {
+				soundCell.text = self.soundPickerValue!
+			}
 		}
 		
 		SwiftySound.Sound.stopAll()
@@ -383,5 +394,76 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.numberOfRowsForSection[section]!
     }
+	
+	/* Display the ColorPicker for the led color into an UIActionSheet */
+	func presentColorPickerInActionSheet() {
+		self.clearsSelectionOnViewWillAppear = false
+		
+		/* Declaring the alert controller
+		* The \n are used to create some space so we can draw the UIDatePicker
+		*/
+		let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+		
+		/* Setting the DatePickerView */
+		let margin:CGFloat = 10.0
+		let rect = CGRect(x: margin, y: margin, width: alertController.view.bounds.size.width - margin * 4.0, height: 240)
+		let colorPicker = ColorPickerView(frame: rect)
+		
+		colorPicker.delegate = self
+		colorPicker.layoutDelegate = self
+		
+		colorPicker.colors = [Color.purple,
+		                      Color.blue,
+		                      Color.orange,
+		                      Color.green,
+		                      Color.red,
+		                      Color.tealBlue,
+		]
+		
+		colorPicker.preselectedIndex = colorPicker.colors.index(of: UIColor(hex: (self.settings?.led?.color)!))
+		
+		alertController.view.addSubview(colorPicker)
+		
+		/* We create two actions - Save and Delete */
+		let saveAction = UIAlertAction(title: "Save", style: .default, handler: self.colorListAlertCallback)
+		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: self.colorListAlertCallback)
+		
+		/* Now we add the two actions to the alertController */
+		alertController.addAction(saveAction)
+		alertController.addAction(cancelAction)
+		
+		/* We just display the alert */
+		DispatchQueue.main.async {
+			self.present(alertController, animated: true, completion:{})
+		}
+	}
+	
+	func colorPickerView(_ colorPickerView: ColorPickerView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+		return 5.0
+	}
+	
+	func colorPickerView(_ colorPickerView: ColorPickerView, insetForSectionAt section: Int) -> UIEdgeInsets {
+		return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+	}
+	
+	func colorListAlertCallback(alert: UIAlertAction) {
+		if alert.title == "Save" {
+			try! realm.write {
+				self.settings?.led?.color = (self.colorPickerValue?.hex())!
+			}
+			if let ledCell = self.cellViews[7] as? UILabel {
+				ledCell.setIcon(icon: .fontAwesome(.circle), iconSize: 30, color: UIColor(hex: (self.settings?.led?.color)!), bgColor: Color.clear)
+			}
+			
+		}
+		
+	}
+	
+	func colorPickerView(_ colorPickerView: ColorPickerView, didSelectItemAt indexPath: IndexPath) {
+		self.colorPickerValue = colorPickerView.colors[colorPickerView.indexOfSelectedColor!]
+	}
+	
+	
+
 
 }
