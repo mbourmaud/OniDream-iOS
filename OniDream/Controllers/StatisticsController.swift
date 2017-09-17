@@ -8,14 +8,43 @@
 
 import UIKit
 import SnapKit
+import Charts
 
-class StatisticsController: UIViewController {
+class StatisticsController: UIViewController, ChartViewDelegate {
 	
 	var scrollView: UIScrollView!
     var blurEffectView: UIVisualEffectView!
+    var sleepTimeBarChartView : SleepTimeBarChartView!
+    var qualityPieChartView: SleepQualityPieChartView!
+    
+    var sleepTimeThisWeek: [Double] = [7.3, 7.2, 6.7, 7.0, 6.3, 7.5, 6.1]
+    var sleepTimeLastWeek: [Double] = [6.2, 7.3, 6.4, 7.2, 5.9, 6.3, 6.1]
+    var sleepQualityThisWeek: [[String: Double]] = [
+        ["REM" : 18, "LS": 42, "DS": 28, "LD": 12],
+        ["REM" : 12, "LS": 42, "DS": 36, "LD": 10],
+        ["REM" : 19, "LS": 32, "DS": 27, "LD": 22],
+        ["REM" : 17, "LS": 36, "DS": 30, "LD": 17],
+        ["REM" : 22, "LS": 28, "DS": 42, "LD": 8],
+        ["REM" : 19, "LS": 28, "DS": 32, "LD": 21],
+        ["REM" : 17, "LS": 43, "DS": 26, "LD": 14],
+        ]
+    var sleepQualityLastWeek: [[String: Double]] = [
+        ["REM" : 17, "LS": 37, "DS": 36, "LD": 10],
+        ["REM" : 12, "LS": 39, "DS": 23, "LD": 26],
+        ["REM" : 10, "LS": 43, "DS": 32, "LD": 15],
+        ["REM" : 17, "LS": 43, "DS": 26, "LD": 14],
+        ["REM" : 22, "LS": 28, "DS": 42, "LD": 8],
+        ["REM" : 12, "LS": 42, "DS": 36, "LD": 10],
+        ["REM" : 22, "LS": 28, "DS": 42, "LD": 8],
+        ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.initSleepTimeChart()
+        self.initQualityPieChart()
+        sleepTimeBarChartView.delegate = self
+        qualityPieChartView.delegate = self
         
         self.view.addSubview(View(frame: self.view.frame))
         self.edgesForExtendedLayout = []
@@ -24,11 +53,37 @@ class StatisticsController: UIViewController {
 				
 		//self.title = "Statistics"
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        
+        self.initSleepTimeChart()
+        self.initQualityPieChart()
+        
+        sleepTimeBarChartView.delegate = self
+        qualityPieChartView.delegate = self
+    }
+    
+    /* Just init the BarChartView */
+    func initSleepTimeChart() {
+        self.sleepTimeBarChartView = SleepTimeBarChartView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 360))
+        
+        self.sleepTimeBarChartView.sleepTimes = self.sleepTimeThisWeek
+        self.sleepTimeBarChartView.drawChart()
+    }
+    
+    /* Just init the PieChartView */
+    func initQualityPieChart() {
+        self.qualityPieChartView = SleepQualityPieChartView(frame: CGRect(x: 0, y: self.sleepTimeBarChartView.bounds.height + 10, width: view.bounds.width, height: 300))
+        
+        self.qualityPieChartView.sleepQuality = self.sleepQualityThisWeek[self.sleepQualityThisWeek.count - 1]
+        self.qualityPieChartView.drawChart()
+    }
+    
 	private func buildLayout() {
 		// Creating the two ChartCards
-		let pieCard = Card(title: "PIE", content: UIView())
-		let barCard = Card(title: "BAR", content: UIView())
+		let pieCard = Card(title: ChartsText.sleepQualityTitle, content: qualityPieChartView)
+		let barCard = Card(title: ChartsText.sleepTimeTitle, content: sleepTimeBarChartView)
 		
 		// Creating the Scroll View
 		self.scrollView = UIScrollView(frame: self.view.bounds)
@@ -56,11 +111,32 @@ class StatisticsController: UIViewController {
 		
 		self.scrollView.contentSize = CGSize(width: barCard.bounds.size.width + pieCard.bounds.size.width,
 		                                     height: barCard.bounds.size.height + pieCard.bounds.size.height)
-
-		
-	
 	}
 	
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        if chartView is SleepTimeBarChartView {
+            if let navigator = navigationController {
+                
+                let sleepTimeDetailsC : SleepTimeDetailsController = SleepTimeDetailsController()
+                sleepTimeDetailsC.sleepTimeLastWeek = self.sleepTimeLastWeek
+                sleepTimeDetailsC.sleepTimeThisWeek = self.sleepTimeThisWeek
+                
+                navigator.pushViewController(sleepTimeDetailsC, animated: true)
+            }
+        }
+        else if chartView is SleepQualityPieChartView {
+            if let navigator = navigationController {
+
+                let sleepQualityDetailsC : SleepQualityDetailsController = SleepQualityDetailsController()
+                sleepQualityDetailsC.sleepQualityLastWeek = self.sleepQualityLastWeek
+                sleepQualityDetailsC.sleepQualityThisWeek = self.sleepQualityThisWeek
+
+                navigator.pushViewController(sleepQualityDetailsC, animated: true)
+            }
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
