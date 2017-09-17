@@ -80,12 +80,7 @@ class Card: UIView {
 	}
 	
 	private func styleContent() {
-		content.backgroundColor = Color.white30
-
-		if let content = self.content as? UILabel {
-			content.numberOfLines = 0
-			content.sizeToFit()
-		}
+		content.backgroundColor = Color.white10
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
