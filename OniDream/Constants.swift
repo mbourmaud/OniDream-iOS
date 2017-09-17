@@ -14,6 +14,16 @@ internal struct	APIConfig {
 	internal static let url = ""
 }
 
+internal struct ChartsText {
+    internal static let sleepDurationTitle = "Sleep duration this week"
+    internal static let sleepQualityTitle = "Sleep quality this week"
+    internal static let noData = "NO DATA"
+    internal static let rem = "REM"
+    internal static let ds = "Deep Sleep"
+    internal static let ls = "Light Sleep"
+    internal static let ld = "Lucid Dream"
+}
+
 internal struct Identifier {
 	// MARK: Cells Identifiers
 	internal static let dreamTableViewCell = "dreamTableViewCell"
