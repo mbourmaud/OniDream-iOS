@@ -31,7 +31,7 @@
                 <navigationController storyboardIdentifier="profileNavigationController" id="d5j-AV-kpO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="4vA-Sd-y6Z"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e9q-qM-E2w">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -69,11 +69,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="kcj-mw-RfO">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gDI-M3-e75">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bluetoothCell" id="gDI-M3-e75">
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gDI-M3-e75" id="ObH-qF-NQ0">
@@ -88,7 +89,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Alarm Types and Time" id="3Vk-bt-vYn">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hLT-Y4-5iG">
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="soundSwitchCell" id="hLT-Y4-5iG">
                                         <rect key="frame" x="0.0" y="135" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hLT-Y4-5iG" id="PRK-Bl-Ob7">
@@ -96,7 +97,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GXc-1Y-Ngh">
+                                    <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="vibrationSwitchCell" id="GXc-1Y-Ngh">
                                         <rect key="frame" x="0.0" y="179" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GXc-1Y-Ngh" id="wGg-tM-Hiw">
@@ -104,7 +105,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jye-TC-9Y0">
+                                    <tableViewCell clipsSubviews="YES" tag="3" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeCell" id="jye-TC-9Y0">
                                         <rect key="frame" x="0.0" y="223" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jye-TC-9Y0" id="I3K-as-hVY">
@@ -116,7 +117,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Sound" id="7a5-Lw-Fry">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zIa-lc-RAu">
+                                    <tableViewCell clipsSubviews="YES" tag="4" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VolumeCell" id="zIa-lc-RAu">
                                         <rect key="frame" x="0.0" y="323" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zIa-lc-RAu" id="Rp3-4B-5IY">
@@ -124,18 +125,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ylW-TH-PRT">
+                                    <tableViewCell clipsSubviews="YES" tag="5" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="soundCell" id="ylW-TH-PRT">
                                         <rect key="frame" x="0.0" y="367" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ylW-TH-PRT" id="M1E-R1-d02">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LEZ-9L-dvU">
-                                        <rect key="frame" x="0.0" y="411" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LEZ-9L-dvU" id="203-G8-aFW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
@@ -144,8 +137,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Vibration" id="X5M-e9-6bu">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AXY-RD-xJK">
-                                        <rect key="frame" x="0.0" y="511" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" tag="6" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="powerCell" id="AXY-RD-xJK">
+                                        <rect key="frame" x="0.0" y="467" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AXY-RD-xJK" id="xcj-rX-821">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -156,8 +149,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Led" id="b4J-zo-izi">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UK5-Tk-DtJ">
-                                        <rect key="frame" x="0.0" y="611" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" tag="7" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ledCell" id="UK5-Tk-DtJ">
+                                        <rect key="frame" x="0.0" y="567" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UK5-Tk-DtJ" id="0pW-4L-jfB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -238,7 +231,7 @@
                 <navigationController storyboardIdentifier="settingsNavigationController" id="wI5-4B-zsk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="fyJ-9b-Pua"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dOI-Jo-9dn">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -332,7 +325,7 @@
                 <navigationController storyboardIdentifier="dreamBookNavigationController" id="nPe-yU-S6H" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="c2K-5U-Kve"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hJl-GO-gtq">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -349,7 +342,7 @@
                 <navigationController storyboardIdentifier="statisticsNavigationController" id="aaK-ym-9WV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="tRm-8U-zno"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QHG-Ma-dg2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

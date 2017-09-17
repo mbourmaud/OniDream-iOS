@@ -22,11 +22,11 @@ class StatisticsService {
     static let shared = StatisticsService()
     
     public func saveStatistics(statistics: Statistics) {
-        realm.add(statistics)
+        //realm.add(statistics)
     }
     
-    func loadStatistics() -> Results<Statistics>? {
-            return realm.objects(Statistics.self)
-    }
+    /*func loadStatistics() -> Results<Statistics>? {
+		return realm.objects(Statistics.self)
+    }*/
 }
 
