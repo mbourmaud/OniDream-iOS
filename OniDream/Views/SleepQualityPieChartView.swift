@@ -16,14 +16,14 @@ class SleepQualityPieChartView: PieChartView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.legend.textColor = UIColor.white
+        self.legend.textColor = Color.white80
         self.chartDescription = Description()
         self.chartDescription?.text = ""
         self.usePercentValuesEnabled = true
         self.entryLabelFont = NSUIFont(name: "Arial", size: 13)
-        self.entryLabelColor = UIColor.black
+        self.entryLabelColor = Color.white80
         self.spin(duration: 3000, fromAngle: 10, toAngle: 360, easingOption: .easeInCirc)
-        self.legend.textColor = UIColor.black
+        self.legend.textColor = Color.white80
         self.holeColor = nil
     }
     
@@ -55,7 +55,7 @@ class SleepQualityPieChartView: PieChartView {
         
         chartDataSets.append(set)
         
-        set.valueTextColor = UIColor.white
+        set.valueTextColor = Color.white80
         
         let pieChartColors: [NSUIColor] = [Color.blue, Color.purple, Color.blue, Color.tealBlue]
         

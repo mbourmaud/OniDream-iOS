@@ -15,13 +15,30 @@ internal struct	APIConfig {
 }
 
 internal struct ChartsText {
-    internal static let sleepDurationTitle = "Sleep duration this week"
+    // MARK: StatisticsController and Views
+    internal static let sleepTimeTitle = "Sleep time this week"
     internal static let sleepQualityTitle = "Sleep quality this week"
     internal static let noData = "NO DATA"
     internal static let rem = "REM"
     internal static let ds = "Deep Sleep"
     internal static let ls = "Light Sleep"
     internal static let ld = "Lucid Dream"
+    
+    // MARK: SleepTimeDetailsController and Views
+    internal static let sleepTimeDetailsTitle = "Sleep Time"
+    internal static let avgSleepTimeTW = "Your average sleep time this week"
+    internal static let avgSleepTimeLW = "Your average sleep time last week"
+    internal static let sleepTimeTW = "This week sleep time (in hours)"
+    internal static let sleepTimeLW = "Last week sleep time (in hours)"
+    
+    // MARK: SleepQualityDetailsController and Views
+    internal static let sleepQualityDetailsTitle = "Sleep Quality"
+    internal static let avgSleepQualityTW = "Your average sleep quality this week"
+    internal static let avgSleepQualityLW = "Your average sleep quality last week"
+    internal static let sleepQualityTW = "Sleep quality this week"
+    internal static let goodSleepQuality = "Good Sleep Quality"
+    internal static let badSleepQuality = "Bad Sleep Quality"
+    
 }
 
 internal struct Identifier {

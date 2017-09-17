@@ -37,36 +37,3 @@ class Statistics: Object {
         fatalError("init(realm:schema:) has not been implemented")
     }
 }
-//class Statistics: NSObject, NSCoding {
-//    var sleepTime : [Double] = [];
-//    var sleepQuality : [[String: Double]] = [[String: Double]]();
-//
-//
-//    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-//
-//    init(sleepTime: [Double], sleepQuality: [[String: Double]]) {
-//        self.sleepQuality = sleepQuality
-//        self.sleepTime = sleepTime
-//    }
-//
-//    convenience override init () {
-//        self.init(sleepTime: [], sleepQuality: [[:]])
-//    }
-//
-//    func encode(with aCoder: NSCoder) {
-//        aCoder.encode(sleepTime, forKey: PropertyKey.sleepTimeKey)
-//        aCoder.encode(sleepQuality, forKey: PropertyKey.sleepQualityKey)
-//    }
-//
-//    required convenience init?(coder aDecoder: NSCoder) {
-//        let sleepTime = aDecoder.decodeObject(forKey: PropertyKey.sleepTimeKey) as! [Double]
-//        let sleepQuality = aDecoder.decodeObject(forKey: PropertyKey.sleepQualityKey) as! [[String: Double]]
-//        self.init(sleepTime: sleepTime, sleepQuality: sleepQuality)
-//    }
-//
-//    struct PropertyKey {
-//        static let  sleepTimeKey = "sleepTime"
-//        static let  sleepQualityKey = "sleepQuality"
-//    }
-//}
-

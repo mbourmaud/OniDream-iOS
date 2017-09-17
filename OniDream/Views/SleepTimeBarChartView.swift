@@ -11,11 +11,12 @@ import UIKit
 import Charts
 
 class SleepTimeBarChartView: BarChartView {
-    var sleepDurations: [Double] = []
+    var sleepTimes: [Double] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.legend.textColor = Color.white80
         self.chartDescription = Description()
         self.chartDescription?.text = ""
         self.xAxis.labelCount = 7
@@ -23,8 +24,11 @@ class SleepTimeBarChartView: BarChartView {
         self.xAxis.labelPosition = XAxis.LabelPosition.bottom
         self.xAxis.drawGridLinesEnabled = false
         self.xAxis.drawAxisLineEnabled = false
+        self.rightAxis.labelTextColor = Color.white50
+        self.leftAxis.labelTextColor = Color.white50
+        self.xAxis.labelTextColor = Color.white50
         self.legend.enabled = false
-        self.legend.textColor = Color.white50
+        self.legend.textColor = Color.white80
         self.disableZoomEffects()
         
         
@@ -35,7 +39,7 @@ class SleepTimeBarChartView: BarChartView {
     }
     
     func drawChart() {
-        self.data = getSleepDurationData()
+        self.data = getSleepTimeData()
         self.invalidateIntrinsicContentSize()
         
     }
@@ -48,12 +52,12 @@ class SleepTimeBarChartView: BarChartView {
         self.scaleYEnabled = false
     }
     
-    func getSleepDurationData() -> BarChartData {
+    func getSleepTimeData() -> BarChartData {
         var entries: [ChartDataEntry] = []
         var i: Int = 0
         
-        for sleepDuration in self.sleepDurations {
-            entries.append(BarChartDataEntry(x: Double(i), y: sleepDuration))
+        for sleepTime in self.sleepTimes {
+            entries.append(BarChartDataEntry(x: Double(i), y: sleepTime))
             i = i + 1
         }
         
@@ -62,7 +66,7 @@ class SleepTimeBarChartView: BarChartView {
         
         let set: BarChartDataSet = BarChartDataSet(values: entries, label: "")
         
-        set.valueTextColor = UIColor.white
+        set.valueTextColor = Color.white80
         set.valueColors = [Color.blue, Color.purple, Color.blue, Color.tealBlue]
         
         chartDataSets.append(set);
