@@ -106,16 +106,11 @@ class DreamController: UIViewController, UITextViewDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-		if self.navigationItem.rightBarButtonItem === sender as AnyObject? {
-			print("SAVE BUTTON PRESSED")
+		if segue.identifier == Identifier.unwindToDreams {
 			let title = self.titleInput.textField.text
 			let content = self.contentTextView.textView.text
 			
 			dream = Dream(title: title!, content: content!, date: Date());
-			
-			print("Dream: \(dream.title), \(dream.content)")
 		}
     }
 

@@ -36,7 +36,7 @@ class Input: UIView {
 	}
 	
 	private func styleTextField() {
-		self.textField.backgroundColor = Color.white50
+		self.textField.backgroundColor = Color.white10
 		self.textField.layer.cornerRadius = Style.radius
 		self.textField.font = Style.textFont
         self.textField.attributedPlaceholder = NSAttributedString(string: self.placeholder,

@@ -31,7 +31,7 @@
                 <navigationController storyboardIdentifier="profileNavigationController" id="d5j-AV-kpO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="4vA-Sd-y6Z"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e9q-qM-E2w">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -231,7 +231,7 @@
                 <navigationController storyboardIdentifier="settingsNavigationController" id="wI5-4B-zsk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="fyJ-9b-Pua"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dOI-Jo-9dn">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -264,22 +264,19 @@
         <!--Dream Book-->
         <scene sceneID="n4B-3f-bG4">
             <objects>
-                <tableViewController title="Dream Book" id="PAE-Gu-qZc" customClass="DreamsController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="mAY-2q-FL8">
+                <tableViewController title="Dream Book" id="PAE-Gu-qZc" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mAY-2q-FL8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="dreamTableViewCell" rowHeight="200" id="7jy-Db-id4" customClass="DreamTableViewCell" customModule="OniDream" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="dreamTableViewCell" id="7jy-Db-id4" customClass="Cell" customModule="OniDream" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7jy-Db-id4" id="Txt-z0-jFj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="EPZ-Bb-iTr" kind="show" identifier="editDream" id="V6X-u4-YYH"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -289,13 +286,33 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dream Book" id="Q8V-zI-uKN"/>
-                    <connections>
-                        <segue destination="EPZ-Bb-iTr" kind="show" identifier="composeDream" id="msW-sf-rba"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p47-TZ-uU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-954" y="699"/>
+        </scene>
+        <!--Dreams Controller-->
+        <scene sceneID="g2W-pz-szD">
+            <objects>
+                <viewController id="PsR-Mo-BHx" customClass="DreamsController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gXN-QM-efH"/>
+                        <viewControllerLayoutGuide type="bottom" id="QnW-e3-Ruy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ptV-jF-1ck">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oxc-sP-znh"/>
+                    <connections>
+                        <segue destination="EPZ-Bb-iTr" kind="show" identifier="composeDream" id="988-IR-lgA"/>
+                        <segue destination="EPZ-Bb-iTr" kind="show" identifier="editDream" id="fpp-Kf-2A3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pvU-Yi-UIG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282.39999999999998" y="684.10794602698661"/>
         </scene>
         <!--Dream Controller-->
         <scene sceneID="w23-RH-DSE">
@@ -325,11 +342,11 @@
                 <navigationController storyboardIdentifier="dreamBookNavigationController" id="nPe-yU-S6H" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="c2K-5U-Kve"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hJl-GO-gtq">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="PAE-Gu-qZc" kind="relationship" relationship="rootViewController" id="2vT-kd-L7h"/>
+                        <segue destination="PsR-Mo-BHx" kind="relationship" relationship="rootViewController" id="f6D-7G-o0w"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJj-eJ-j5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -342,7 +359,7 @@
                 <navigationController storyboardIdentifier="statisticsNavigationController" id="aaK-ym-9WV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="tRm-8U-zno"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QHG-Ma-dg2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -355,6 +372,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V6X-u4-YYH"/>
+        <segue reference="fpp-Kf-2A3"/>
     </inferredMetricsTieBreakers>
 </document>

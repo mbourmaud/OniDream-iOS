@@ -35,7 +35,7 @@ class TextView: UIView {
 	
 	private func styleTextView() {
 		self.textView.textContainerInset = UIEdgeInsetsMake(Style.margin, Style.margin / 2, Style.margin, Style.margin / 2)
-		self.textView.backgroundColor = Color.white50
+		self.textView.backgroundColor = Color.white10
 		self.textView.layer.cornerRadius = Style.radius
 		self.textView.font = Style.textFont
 		self.textView.attributedPlaceholder = NSAttributedString(string: self.placeholder,

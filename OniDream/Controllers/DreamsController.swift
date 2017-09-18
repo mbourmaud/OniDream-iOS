@@ -7,27 +7,54 @@
 //
 
 import UIKit
+import RealmSwift
 
-class DreamsController: UITableViewController {
-	var dreams: [Dream] = []
+class DreamsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	var dreams: List<Dream> = List<Dream>()
 	var selectedDream: Dream = Dream()
+	var tableView: UITableView!
 	
-    override func viewDidLoad() {
+	override func viewDidLoad() {
         super.viewDidLoad()
 		
-        self.tableView.backgroundView = View(frame: self.tableView.bounds)
+		self.tableView = UITableView()
+		
+		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
+		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
+		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
+		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
+		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
+		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
+		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
+		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
+		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
+		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowo"))
+
+		print(self.dreams.count)
+		
+        self.view = View(frame: self.view.frame)
+		
+		self.view.addSubview(self.tableView)
+		
+		self.tableView.snp.makeConstraints { (make) -> Void in
+			make.top.equalTo(self.view).offset((self.navigationController?.navigationBar.frame.size.height)! + UIApplication.shared.statusBarFrame.height)
+			make.bottom.equalTo(self.view).offset(-(self.tabBarController?.tabBar.frame.size.height)!)
+			make.left.equalTo(self.view).offset(Style.margin)
+			make.right.equalTo(self.view).offset(-Style.margin)
+		}
+		
+		self.tableView.backgroundColor = Color.clear
+		self.tableView.backgroundView?.backgroundColor = Color.clear
 		self.tableView.separatorStyle = .none
-        
-        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 0, 0)
-        
+		self.tableView.showsHorizontalScrollIndicator = false
+		self.tableView.showsVerticalScrollIndicator = false
+		
+		// These tasks can also be done in IB if you prefer.
+		self.tableView.register(DreamCell.self, forCellReuseIdentifier: Identifier.dreamTableViewCell)
+		self.tableView.delegate = self
+		self.tableView.dataSource = self
+	
 		self.drawNavigationBar()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        if let rect = self.navigationController?.navigationBar.frame {
-            let y = rect.size.height + rect.origin.y
-            self.tableView.contentInset = UIEdgeInsetsMake( y, 0, 0, 0)
-        }
     }
 	
 	private func drawNavigationBar() {		
@@ -35,8 +62,8 @@ class DreamsController: UITableViewController {
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeDreamTapped))
 	}
 	
+	// Segue to DreamForm
 	func composeDreamTapped(_ sender: UIBarButtonItem) {
-		print("COMPOSE DREAM TAPPED")
 		self.selectedDream = Dream()
 		self.performSegue(withIdentifier: Identifier.composeDream, sender: self)
 	}
@@ -48,44 +75,67 @@ class DreamsController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.dreams.count
     }
-
-	// Before it displays the cell, we want to clear the background
-	override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		cell.backgroundColor = Color.clear
+	
+	// There is just one row in every section
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 1
 	}
 	
-	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 200
+	// Set the spacing between sections
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return Style.margin
+	}
+	
+	// Make the background color show through
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let headerView = UIView()
+		headerView.backgroundColor = Color.clear
+		return headerView
 	}
 
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 100
+	}
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.dreamTableViewCell, for: indexPath) as! DreamTableViewCell
-
-		// MARK: Fetches the appropriate note for the data source layout.
-		let dream = dreams[(indexPath as NSIndexPath).row]
-		// MARK: We attribute the dream to the cell
-		cell.dream = dream
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = self.tableView.dequeueReusableCell(withIdentifier: Identifier.dreamTableViewCell) as! DreamCell
 		
-        return cell
-    }
-
-	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		self.selectedDream = dreams[indexPath.row]
-		print("DID SELECT ROW")
-		print(self.selectedDream.description)
+		let dream = self.dreams[indexPath.section]
+		
+		// note that indexPath.section is used rather than indexPath.row
+		cell.titleLabel.text = dream.title
+		cell.titleLabel.textColor = Color.white
+		cell.titleLabel.font = Style.buttonFont
+		
+		cell.contentLabel.text = dream.content
+		cell.contentLabel.textColor = Color.white80
+		
+		cell.dateLabel.textColor = Color.white80
+		cell.dateLabel.font = Style.placeholderFont
+		cell.dateLabel.textAlignment = NSTextAlignment.right
+		cell.dateLabel.text = "\(dream.date.daysAgo) days ago"
+		
+		// add border and color
+		cell.backgroundColor = Color.white10
+		cell.layer.cornerRadius = Style.radius
+		cell.clipsToBounds = true
+		
+		return cell
+	}
+	
+	// method to run when table view cell is tapped
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		// note that indexPath.section is used rather than indexPath.row
+		self.selectedDream = dreams[indexPath.section]
+		performSegue(withIdentifier: Identifier.editDream, sender: self)
+		print("You tapped cell number \(indexPath.section).")
 	}
 
-	
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 			self.dreams.remove(at: (indexPath as NSIndexPath).row)
 			tableView.deleteRows(at: [indexPath], with: .fade)
@@ -97,7 +147,6 @@ class DreamsController: UITableViewController {
     }
 	
 	@IBAction func unwindToDreams(_ sender: UIStoryboardSegue) {
-		/* If the sender is DreamVC, we get the dream and add it to the tableView */
 		if let sourceViewController = sender.source as? DreamController {
 			let dream : Dream = sourceViewController.dream
 			
@@ -122,8 +171,7 @@ class DreamsController: UITableViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let dreamViewController = segue.destination as? DreamController {
-			print("PREPARE TO SEGUE")
-			dreamViewController.dream = Dream(title: "", content: "", date: Date())
+			dreamViewController.dream = self.selectedDream
 			print(selectedDream.description)
 		}
     }

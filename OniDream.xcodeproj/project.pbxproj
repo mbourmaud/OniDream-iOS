@@ -40,7 +40,7 @@
 		60B1EA4A1F64692500F02240 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1EA491F64692500F02240 /* UIViewExtension.swift */; };
 		60B1EA4C1F64698C00F02240 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1EA4B1F64698C00F02240 /* UILabelExtension.swift */; };
 		60C3BCF41F654539000F2528 /* StatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF31F654539000F2528 /* StatisticsController.swift */; };
-		60C3BCF81F6590A9000F2528 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF71F6590A9000F2528 /* DreamTableViewCell.swift */; };
+		60C3BCF81F6590A9000F2528 /* DreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF71F6590A9000F2528 /* DreamCell.swift */; };
 		60C3BCFA1F6590BA000F2528 /* DreamsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCF91F6590BA000F2528 /* DreamsController.swift */; };
 		60C3BCFC1F65985C000F2528 /* DreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCFB1F65985C000F2528 /* DreamController.swift */; };
 		60C3BCFE1F659A42000F2528 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3BCFD1F659A42000F2528 /* TabBarController.swift */; };
@@ -150,7 +150,7 @@
 		60B1EA491F64692500F02240 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		60B1EA4B1F64698C00F02240 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		60C3BCF31F654539000F2528 /* StatisticsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsController.swift; sourceTree = "<group>"; };
-		60C3BCF71F6590A9000F2528 /* DreamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamTableViewCell.swift; sourceTree = "<group>"; };
+		60C3BCF71F6590A9000F2528 /* DreamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamCell.swift; sourceTree = "<group>"; };
 		60C3BCF91F6590BA000F2528 /* DreamsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamsController.swift; sourceTree = "<group>"; };
 		60C3BCFB1F65985C000F2528 /* DreamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamController.swift; sourceTree = "<group>"; };
 		60C3BCFD1F659A42000F2528 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 				60D9EB181F64649D0068969F /* Modal.swift */,
 				60D9EB1C1F6464D50068969F /* Input.swift */,
 				60D9EB1E1F6465040068969F /* Cell.swift */,
-				60C3BCF71F6590A9000F2528 /* DreamTableViewCell.swift */,
+				60C3BCF71F6590A9000F2528 /* DreamCell.swift */,
 				604259201F6879480091B1CD /* TextField.swift */,
 				604259221F6881AE0091B1CD /* Button.swift */,
 				601EB4A11F69C5DC0048CCF1 /* View.swift */,
@@ -763,7 +763,7 @@
 				C15E096F1F6AE867001780AF /* UserService.swift in Sources */,
 				60D9EB151F6464690068969F /* Card.swift in Sources */,
 				608F2F8C1F6D8C79003D464E /* Vibration.swift in Sources */,
-				60C3BCF81F6590A9000F2528 /* DreamTableViewCell.swift in Sources */,
+				60C3BCF81F6590A9000F2528 /* DreamCell.swift in Sources */,
 				60B1EA4C1F64698C00F02240 /* UILabelExtension.swift in Sources */,
 				604259231F6881AE0091B1CD /* Button.swift in Sources */,
 				609E473D1F644D37000EF712 /* AppDelegate.swift in Sources */,

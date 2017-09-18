@@ -250,9 +250,7 @@ class SettingsController: UITableViewController, UIActionSheetDelegate, UIPicker
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let cell = tableView.cellForRow(at: indexPath)
-		
-		print(cell?.reuseIdentifier)
-		
+				
 		if cell?.reuseIdentifier == Identifier.timeCell {
 			presentTimePickerInActionSheet()
 		}
