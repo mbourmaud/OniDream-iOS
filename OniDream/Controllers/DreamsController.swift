@@ -10,27 +10,15 @@ import UIKit
 import RealmSwift
 
 class DreamsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-	var dreams: List<Dream> = List<Dream>()
+	var dreams = try! Realm().objects(Dream.self).sorted(by: ["date"])
 	var selectedDream: Dream = Dream()
 	var tableView: UITableView!
-	
+	let realm = try! Realm()
+
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
 		self.tableView = UITableView()
-		
-		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
-		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
-		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
-		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
-		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
-		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
-		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
-		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
-		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowo"))
-		self.dreams.append(Dream(title: "OUIIIIIII", content: "wowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowowowoowowoowowo"))
-
-		print(self.dreams.count)
 		
         self.view = View(frame: self.view.frame)
 		
@@ -137,12 +125,12 @@ class DreamsController: UIViewController, UITableViewDelegate, UITableViewDataSo
     // Override to support editing the table view.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
-			self.dreams.remove(at: (indexPath as NSIndexPath).row)
-			tableView.deleteRows(at: [indexPath], with: .fade)
-			
-			/* We save the modifications into the local storage */
-			//self.dreamsService.dreams = self.dreams
-			//self.dreamsService.saveDreams()
+			try! realm.write {
+				self.dreams.realm?.delete(self.dreams[indexPath.section])
+			}
+			if let selectedIndexPath = tableView.indexPathForSelectedRow {
+				tableView.deleteRows(at: [selectedIndexPath], with: .fade)
+			}
 		}
     }
 	
@@ -152,13 +140,19 @@ class DreamsController: UIViewController, UITableViewDelegate, UITableViewDataSo
 			
 			/* If the dream has just been upadted, we modify it and reload the rows */
 			if let selectedIndexPath = tableView.indexPathForSelectedRow {
-				dreams[(selectedIndexPath as NSIndexPath).row] = dream
+				try! realm.write {
+					self.dreams[(selectedIndexPath as NSIndexPath).section].title = dream.title
+					self.dreams[(selectedIndexPath as NSIndexPath).section].content = dream.content
+					self.dreams[(selectedIndexPath as NSIndexPath).section].date = dream.date
+				}
 				tableView.reloadRows(at: [selectedIndexPath], with: .none)
 			}
 			/* If the dream is a new one, we just insert it to the rows */
 			else {
-				let newIndexPath = IndexPath(row: dreams.count, section: 0)
-				dreams.append(dream)
+				let newIndexPath = IndexPath(row: 0, section: dreams.count)
+				try! realm.write {
+					dreams.realm?.add(dream)
+				}
 				tableView.insertRows(at: [newIndexPath], with: .bottom)
 			}
 			

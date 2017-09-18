@@ -314,10 +314,10 @@
             </objects>
             <point key="canvasLocation" x="-282.39999999999998" y="684.10794602698661"/>
         </scene>
-        <!--Dream Controller-->
+        <!--Dream Book-->
         <scene sceneID="w23-RH-DSE">
             <objects>
-                <viewController id="EPZ-Bb-iTr" customClass="DreamController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dream Book" id="EPZ-Bb-iTr" customClass="DreamController" customModule="OniDream" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="swF-Xp-jnj"/>
                         <viewControllerLayoutGuide type="bottom" id="EBy-8X-dYU"/>
@@ -329,6 +329,7 @@
                     </view>
                     <connections>
                         <segue destination="xZD-TF-2Eb" kind="unwind" identifier="unwindToDreams" unwindAction="unwindToDreams:" id="oPX-Sw-1Ny"/>
+                        <segue destination="xZD-TF-2Eb" kind="unwind" unwindAction="unwindToDreams:" id="K4R-Jb-ly9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToY-5j-hlI" userLabel="First Responder" sceneMemberID="firstResponder"/>

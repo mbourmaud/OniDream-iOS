@@ -34,6 +34,10 @@ class DreamController: UIViewController, UITextViewDelegate {
 	private func showDreamForm() {
 		let form: DreamForm = DreamForm(input: self.titleInput, textView: contentTextView)
 		
+		form.input?.textField.text = dream.title
+		form.textView.textView.text = dream.content
+		
+		
 		self.view.addSubview(form)
 		
 		form.snp.makeConstraints { (make) -> Void in
@@ -69,7 +73,10 @@ class DreamController: UIViewController, UITextViewDelegate {
 	}
 	
 	func saveTapped(_ sender: UIBarButtonItem) {
-		self.dream = Dream(title: self.titleInput.textField.text!, content: self.contentTextView.textView.text!, date: Date())
+		self.dream = Dream()
+		self.dream.title = self.titleInput.textField.text!
+		self.dream.content = self.contentTextView.textView.text!
+		self.dream.date = Date()
 		performSegue(withIdentifier: Identifier.unwindToDreams, sender: self)
 	}
 	
@@ -107,10 +114,10 @@ class DreamController: UIViewController, UITextViewDelegate {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Identifier.unwindToDreams {
-			let title = self.titleInput.textField.text
-			let content = self.contentTextView.textView.text
-			
-			dream = Dream(title: title!, content: content!, date: Date());
+			dream = Dream()
+			dream.title = self.titleInput.textField.text!
+			dream.content = self.contentTextView.textView.text
+			dream.date = Date()
 		}
     }
 

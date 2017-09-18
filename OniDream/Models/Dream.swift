@@ -10,30 +10,7 @@ import Realm
 import RealmSwift
 
 class Dream: Object {
-	dynamic var title: String
-	dynamic var content: String
-	dynamic var date: Date
-	
-	init(title: String, content: String, date: Date = Date()) {
-		self.title = title
-		self.content = content
-		self.date = date
-		
-		super.init()
-	}
-	
-	required init() {
-		self.title = ""
-		self.content = ""
-		self.date = Date()
-		super.init()
-	}
-	
-	required init(value: Any, schema: RLMSchema) {
-		fatalError("init(value:schema:) has not been implemented")
-	}
-	
-	required init(realm: RLMRealm, schema: RLMObjectSchema) {
-		fatalError("init(realm:schema:) has not been implemented")
-	}
+	dynamic var title: String = ""
+	dynamic var content: String = ""
+	dynamic var date: Date = Date()
 }

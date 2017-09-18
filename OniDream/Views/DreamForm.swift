@@ -40,7 +40,7 @@ class DreamForm: UIView {
 			make.left.equalTo(self.container)
 			make.right.equalTo(self.container)
 			make.top.equalTo((self.input?.snp.bottom)!)
-			make.bottom.equalTo(self.container)
+			make.height.equalTo(400)
 		}
 		
 		super.updateConstraints()
