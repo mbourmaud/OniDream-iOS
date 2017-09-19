@@ -104,8 +104,13 @@ class DreamsController: UIViewController, UITableViewDelegate, UITableViewDataSo
 		cell.dateLabel.textColor = Color.white80
 		cell.dateLabel.font = Style.placeholderFont
 		cell.dateLabel.textAlignment = NSTextAlignment.right
-		cell.dateLabel.text = "\(dream.date.daysAgo) days ago"
-		
+		if (dream.date.daysAgo > 0) {
+			cell.dateLabel.text = "\(dream.date.daysAgo) days ago"
+		} else if (dream.date.hoursAgo > 0) {
+			cell.dateLabel.text = "\(dream.date.hoursAgo) hours ago"
+		} else {
+			cell.dateLabel.text = "\(dream.date.minutesAgo) minutes ago"
+		}
 		// add border and color
 		cell.backgroundColor = Color.white10
 		cell.layer.cornerRadius = Style.radius
@@ -116,10 +121,8 @@ class DreamsController: UIViewController, UITableViewDelegate, UITableViewDataSo
 	
 	// method to run when table view cell is tapped
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		// note that indexPath.section is used rather than indexPath.row
 		self.selectedDream = dreams[indexPath.section]
 		performSegue(withIdentifier: Identifier.editDream, sender: self)
-		print("You tapped cell number \(indexPath.section).")
 	}
 
     // Override to support editing the table view.
@@ -128,16 +131,14 @@ class DreamsController: UIViewController, UITableViewDelegate, UITableViewDataSo
 			try! realm.write {
 				self.dreams.realm?.delete(self.dreams[indexPath.section])
 			}
-			if let selectedIndexPath = tableView.indexPathForSelectedRow {
-				tableView.deleteRows(at: [selectedIndexPath], with: .fade)
-			}
+			let indexSet = IndexSet(arrayLiteral: indexPath.section)
+			tableView.deleteSections(indexSet, with: .automatic)
 		}
     }
 	
 	@IBAction func unwindToDreams(_ sender: UIStoryboardSegue) {
 		if let sourceViewController = sender.source as? DreamController {
 			let dream : Dream = sourceViewController.dream
-			
 			/* If the dream has just been upadted, we modify it and reload the rows */
 			if let selectedIndexPath = tableView.indexPathForSelectedRow {
 				try! realm.write {
@@ -147,18 +148,13 @@ class DreamsController: UIViewController, UITableViewDelegate, UITableViewDataSo
 				}
 				tableView.reloadRows(at: [selectedIndexPath], with: .none)
 			}
-			/* If the dream is a new one, we just insert it to the rows */
+			/* If the dream is a new one, we just insert it to the dreams and reload the data */
 			else {
-				let newIndexPath = IndexPath(row: 0, section: dreams.count)
 				try! realm.write {
 					dreams.realm?.add(dream)
 				}
-				tableView.insertRows(at: [newIndexPath], with: .bottom)
+				tableView.reloadData()
 			}
-			
-			/* We save the modifications into the local storage */
-			//self.dreamsService.dreams = dreams
-			//self.dreamsService.saveDreams()
 		}
 	}
 

@@ -44,7 +44,7 @@ class DreamCell: UITableViewCell {
 		}
 		
 		self.dateLabel.snp.makeConstraints { (make) -> Void in
-			make.width.equalTo(100)
+			make.width.equalTo(130)
 			make.right.equalTo(self.contentView).offset(-Style.margin)
 			make.top.equalTo(self.contentView)
 			make.bottom.equalTo(self.contentLabel.snp.top)
